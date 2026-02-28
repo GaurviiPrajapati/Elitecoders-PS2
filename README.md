@@ -4,9 +4,9 @@
 ![Python](https://img.shields.io/badge/python-3.10%2B-blue)
 ![Telegram](https://img.shields.io/badge/telegram-bot-blue)
 
-**Subject‑Matter‑Expert (SME) AI Assistant Suite**
+**Subject-Matter-Expert (SME) AI Assistant Suite**
 
-A polished web UI and Telegram bot that route user questions to domain‑specific SME prompts, powered by Google’s Gemini LLM. Built with Gemini CLI, LangChain, and a splash of Auto‑GPT.
+A polished web UI and Telegram bot that route user questions to domain-specific SME prompts, powered by Google's Gemini LLM. Built with the Gemini SDK, LangChain, and a splash of Auto-GPT concepts.
 
 ![Expertease UI](path/to/your/screenshot.png)
 
@@ -14,96 +14,109 @@ A polished web UI and Telegram bot that route user questions to domain‑specifi
 
 ## 🚀 Features
 
-- **Four expert domains**
-  - General, Cyber‑security, Financial advisory, Legal analyst
-- **Dual interface**
-  - Telegram chatbot
-  - Dedicated vanilla‑JS web UI (Expertease)
-- **Modular JSON domains** with persona, scope, decision trees, etc.
-- **Mode switching**: /mode TECHNICAL | EXECUTIVE | AUDIT | CLIENT
-- **Jailbreak/security filters** from security/governance_rules.json
+- **Four Expert Domains**
+  - General, Cyber-security, Financial Advisory, Legal Analyst
+- **Dual Interface**
+  - Interactive Telegram Chatbot
+  - Dedicated vanilla JS Web UI (Expertease)
+- **Modular JSON Domains**
+  - Customizable personas, scopes, decision trees, and formatting rules
+- **Mode Switching**
+  - Role-based responses: `/mode TECHNICAL | EXECUTIVE | AUDIT | CLIENT`
+- **Robust Security**
+  - Jailbreak and prompt injection filters governed by `security/governance_rules.json`
 
 ---
 
-## 🗂️ Repo Structure
+## 🗂️ Repository Structure
 
-`
-agent.py
-bot.py              # Telegram bot entrypoint
-sme_engine.py       # builds system prompts
-tools.py
-
-domains/
-  general.json
-  cybersecurity.json
-  financial_advisor.json
-  legal_analyst.json
-
-logs/
-  bot.log
-
-security/
-  governance_rules.json
-
-ui/                 # frontend HTML/CSS/JS (if present)
-`
+```text
+Expertease/
+├── agent.py
+├── bot.py              # Telegram bot entrypoint
+├── sme_engine.py       # Builds system prompts
+├── tools.py
+├── domains/
+│   ├── general.json
+│   ├── cybersecurity.json
+│   ├── financial_advisor.json
+│   └── legal_analyst.json
+├── logs/
+│   └── bot.log
+├── security/
+│   └── governance_rules.json
+└── ui/                 # Frontend HTML/CSS/JS (if present)
+```
 
 ---
 
 ## 🛠️ Setup & Run
 
-### Requirements
+### Prerequisites
 
 - Python 3.10+
 - Virtualenv or venv
-- Env vars: TELEGRAM_TOKEN, GEMINI_API_KEY
+- API Keys: `TELEGRAM_TOKEN`, `GEMINI_API_KEY`
 
-Setting them:
+### 1. Set Environment Variables
 
 **PowerShell**
-`powershell
- = "<your-telegram-token>"
-   = "<your-gemini-api-key>"
-`
+```powershell
+$env:TELEGRAM_TOKEN = "<your-telegram-token>"
+$env:GEMINI_API_KEY = "<your-gemini-api-key>"
+```
 
 **CMD**
-`cmd
+```cmd
 set TELEGRAM_TOKEN=<your-telegram-token>
 set GEMINI_API_KEY=<your-gemini-api-key>
-`
+```
 
-### Install
+**Linux/macOS**
+```bash
+export TELEGRAM_TOKEN="<your-telegram-token>"
+export GEMINI_API_KEY="<your-gemini-api-key>"
+```
 
-`ash
+### 2. Install Dependencies
+
+```bash
 python -m venv .venv
+
+# On Windows:
 .venv\Scripts\activate
+# On Linux/macOS:
+source .venv/bin/activate
+
 pip install python-telegram-bot google-genai
-`
+```
 
-### Run
+### 3. Run the Bot
 
-`ash
+```bash
 python bot.py
-`
+```
 
-Access via Telegram or open the Expertease web UI (e.g., http://localhost:PORT).
+Access the bot via Telegram or open the Expertease web UI (e.g., `http://localhost:PORT`).
 
 ---
 
 ## 🔍 How It Works
 
-1. Incoming message → ot.py classifies domain via LLM prompt.
-2. SMEEngine loads JSON & constructs system prompt.
-3. Session maintained per user/domain; domain switch resets prompt.
-4. Gemini API generates response; bot returns it to user.
+1. **Classification:** Incoming message → `bot.py` classifies the domain via an LLM prompt.
+2. **Prompt Construction:** `SMEEngine` loads the relevant JSON config and constructs the system prompt.
+3. **Session Management:** Sessions are maintained per user/domain. Switching domains resets the prompt context.
+4. **Response Generation:** The Gemini API generates the response, and the bot returns it securely to the user.
 
 ---
 
-## 📁 Domain JSON Example
+## 📁 Domain JSON Configuration
 
-`json
+Adding new domains is as simple as creating a new JSON file in the `domains/` directory using this schema:
+
+```json
 {
-  "domain_name": "Cyber‑Security",
+  "domain_name": "Cyber-Security",
   "persona": "Seasoned infosec analyst",
   "scope": ["vulnerabilities", "threat intel"],
   "decision_tree": [...],
@@ -111,32 +124,32 @@ Access via Telegram or open the Expertease web UI (e.g., http://localhost:PORT).
   "output_format": { "type": "markdown" },
   "out_of_scope_response": "I'm not able to answer that."
 }
-`
+```
 
-> Add new domains by creating a JSON file in domains/ using this schema.
+> **Tip:** Add a new domain by copying an existing JSON file and tweaking the schema attributes.
 
 ---
 
 ## 🧩 Customization
 
-- Modify classify_domain() in ot.py.
-- Update SMEEngine.build_system_prompt() for prompt logic.
-- Swap LLM models in client.models.generate_content / client.chats.create.
-- Edit frontend in ui/ for UI tweaks.
+- Modify `classify_domain()` in `bot.py` to add new routing logic.
+- Update `SMEEngine.build_system_prompt()` for advanced prompt engineering.
+- Edit the frontend files in `ui/` for custom styling and web components.
+- Swap LLM models or tweak generation params directly in the API client calls.
 
 ---
 
-## 🛡️ Security
+## 🛡️ Security & Governance
 
-- Governance rules in security/governance_rules.json prevent jailbreaks.
-- All user input is screened before hitting Gemini.
+- Configurable rules in `security/governance_rules.json` prevent LLM jailbreaks.
+- All user inputs are sanitized and screened before content generation.
 
 ---
 
-## 📦 Notes
+## 📦 Additional Notes
 
-- Backend logic & domains included; feel free to add equirements.txt, tests, CI.
-- Web UI (Expertease) is separate but bundled for showcase.
+- Core backend logic and initial domains are included. Feel free to extend this project by adding a `requirements.txt`, unit tests, or a CI/CD pipeline.
+- The web UI (Expertease) is separate but bundled for showcase purposes.
 
 ---
 
@@ -149,9 +162,7 @@ See [LICENSE](LICENSE) for details.
 
 ### 🎯 Hackathon Tips
 
-Demonstrate:
-- Slick UI vs Telegram interaction
-- Adding a domain in seconds
-- Mode switching & safe responses
-
----
+If presenting this project, demonstrate:
+- The slick UI compared to the standard Telegram interaction.
+- How easy it is to drop in a new expert domain in seconds.
+- Seamless mode switching and secure, filtered responses.
