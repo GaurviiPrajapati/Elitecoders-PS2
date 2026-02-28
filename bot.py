@@ -1,3 +1,5 @@
+# bot.py
+
 import os
 import logging
 from telegram import Update
@@ -11,7 +13,6 @@ from telegram.constants import ChatAction
 
 from sme_engine import SMEEngine
 from agent import AgentFactory
-from langchain_google_genai import ChatGoogleGenerativeAI
 
 logging.basicConfig(
     filename="bot.log",
@@ -30,6 +31,7 @@ AVAILABLE_DOMAINS = {
 
 sme_engine = SMEEngine("domains/general.json")
 agent_factory = AgentFactory()
+
 user_agents = {}
 
 def classify_domain(user_text, llm):
@@ -45,6 +47,7 @@ Respond ONLY with domain name.
 User Query:
 {user_text}
 """
+
     response = llm.invoke(prompt)
     raw = response.content.strip().lower()
 
@@ -53,6 +56,7 @@ User Query:
             return key
 
     return "general"
+
 
 async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user_id = update.message.from_user.id
@@ -67,16 +71,33 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
         llm = agent_factory.llm
         detected_domain = classify_domain(user_text, llm)
 
-        sme_engine.switch_domain(AVAILABLE_DOMAINS[detected_domain])
-        system_prompt = sme_engine.build_system_prompt()
-
+        # Recreate agent if domain changed
         if user_id not in user_agents:
+            sme_engine.switch_domain(AVAILABLE_DOMAINS[detected_domain])
+            system_prompt = sme_engine.build_system_prompt()
             agent = agent_factory.create_agent(system_prompt)
-            user_agents[user_id] = agent
+            user_agents[user_id] = {
+                "agent": agent,
+                "domain": detected_domain
+            }
         else:
-            agent = user_agents[user_id]
+            if user_agents[user_id]["domain"] != detected_domain:
+                sme_engine.switch_domain(AVAILABLE_DOMAINS[detected_domain])
+                system_prompt = sme_engine.build_system_prompt()
+                agent = agent_factory.create_agent(system_prompt)
+                user_agents[user_id] = {
+                    "agent": agent,
+                    "domain": detected_domain
+                }
 
-        reply = agent.run(user_text)
+        agent = user_agents[user_id]["agent"]
+
+        response = agent.invoke(
+            {"input": user_text},
+            config={"configurable": {"session_id": str(user_id)}}
+        )
+
+        reply = response["output"]
 
     except Exception as e:
         reply = f"⚠️ Error: {str(e)}"
@@ -84,11 +105,14 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     await update.message.reply_text(reply)
 
+
 def main():
     app = ApplicationBuilder().token(TELEGRAM_TOKEN).build()
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_message))
+
     print("🤖 Clean SME Agent running...")
     app.run_polling()
+
 
 if __name__ == "__main__":
     main()
