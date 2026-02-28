@@ -1958,3 +1958,2093 @@ google.genai.errors.ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429,
 2026-02-28 20:47:07,203 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
 2026-02-28 20:47:07,203 - INFO - Application is stopping. This might take a moment.
 2026-02-28 20:47:07,204 - INFO - Application.stop() complete
+2026-02-28 21:31:18,109 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getMe "HTTP/1.1 200 OK"
+2026-02-28 21:31:18,244 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/deleteWebhook "HTTP/1.1 200 OK"
+2026-02-28 21:31:18,245 - INFO - Application started
+2026-02-28 21:31:27,441 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:31:29,387 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:31:32,800 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:31:32,801 - INFO - User 5181970713: hi
+2026-02-28 21:31:33,482 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/sendChatAction "HTTP/1.1 200 OK"
+2026-02-28 21:31:33,483 - INFO - AFC is enabled with max remote calls: 10.
+2026-02-28 21:31:33,694 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 400 Bad Request"
+2026-02-28 21:31:33,698 - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_application.py", line 1315, in process_update
+    await coroutine
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_handlers\basehandler.py", line 159, in handle_update
+    return await self.callback(update, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\HackX\bot.py", line 189, in handle_message
+    detected_domain = classify_domain(user_text)
+  File "C:\HackX\bot.py", line 122, in classify_domain
+    response = client.models.generate_content(
+        model="gemini-2.5-flash",
+        contents=classification_prompt
+    )
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\genai\models.py", line 5644, in generate_content
+    response = self._generate_content(
+        model=model, contents=contents, config=parsed_config
+    )
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\genai\models.py", line 4306, in _generate_content
+    response = self._api_client.request(
+        'post', path, request_dict, http_options
+    )
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\genai\_api_client.py", line 1401, in request
+    response = self._request(http_request, http_options, stream=False)
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\genai\_api_client.py", line 1237, in _request
+    return self._retry(self._request_once, http_request, stream)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\tenacity\__init__.py", line 470, in __call__
+    do = self.iter(retry_state=retry_state)
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\tenacity\__init__.py", line 371, in iter
+    result = action(retry_state)
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\tenacity\__init__.py", line 413, in exc_check
+    raise retry_exc.reraise()
+          ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\tenacity\__init__.py", line 184, in reraise
+    raise self.last_attempt.result()
+          ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.3312.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.3312.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\tenacity\__init__.py", line 473, in __call__
+    result = fn(*args, **kwargs)
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\genai\_api_client.py", line 1214, in _request_once
+    errors.APIError.raise_for_response(response)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\genai\errors.py", line 134, in raise_for_response
+    cls.raise_error(response.status_code, response_json, response)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\genai\errors.py", line 159, in raise_error
+    raise ClientError(status_code, response_json, response)
+google.genai.errors.ClientError: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'API Key not found. Please pass a valid API key.', 'status': 'INVALID_ARGUMENT', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'API_KEY_INVALID', 'domain': 'googleapis.com', 'metadata': {'service': 'generativelanguage.googleapis.com'}}, {'@type': 'type.googleapis.com/google.rpc.LocalizedMessage', 'locale': 'en-US', 'message': 'API Key not found. Please pass a valid API key.'}]}}
+2026-02-28 21:31:43,006 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:31:53,757 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:32:03,892 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:32:07,406 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:32:10,861 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:32:10,862 - INFO - User 5181970713: hi
+2026-02-28 21:32:11,675 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/sendChatAction "HTTP/1.1 200 OK"
+2026-02-28 21:32:11,676 - INFO - AFC is enabled with max remote calls: 10.
+2026-02-28 21:32:11,800 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 400 Bad Request"
+2026-02-28 21:32:11,802 - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_application.py", line 1315, in process_update
+    await coroutine
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_handlers\basehandler.py", line 159, in handle_update
+    return await self.callback(update, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\HackX\bot.py", line 189, in handle_message
+    detected_domain = classify_domain(user_text)
+  File "C:\HackX\bot.py", line 122, in classify_domain
+    response = client.models.generate_content(
+        model="gemini-2.5-flash",
+        contents=classification_prompt
+    )
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\genai\models.py", line 5644, in generate_content
+    response = self._generate_content(
+        model=model, contents=contents, config=parsed_config
+    )
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\genai\models.py", line 4306, in _generate_content
+    response = self._api_client.request(
+        'post', path, request_dict, http_options
+    )
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\genai\_api_client.py", line 1401, in request
+    response = self._request(http_request, http_options, stream=False)
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\genai\_api_client.py", line 1237, in _request
+    return self._retry(self._request_once, http_request, stream)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\tenacity\__init__.py", line 470, in __call__
+    do = self.iter(retry_state=retry_state)
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\tenacity\__init__.py", line 371, in iter
+    result = action(retry_state)
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\tenacity\__init__.py", line 413, in exc_check
+    raise retry_exc.reraise()
+          ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\tenacity\__init__.py", line 184, in reraise
+    raise self.last_attempt.result()
+          ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.3312.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.3312.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\tenacity\__init__.py", line 473, in __call__
+    result = fn(*args, **kwargs)
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\genai\_api_client.py", line 1214, in _request_once
+    errors.APIError.raise_for_response(response)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\genai\errors.py", line 134, in raise_for_response
+    cls.raise_error(response.status_code, response_json, response)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\genai\errors.py", line 159, in raise_error
+    raise ClientError(status_code, response_json, response)
+google.genai.errors.ClientError: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'API Key not found. Please pass a valid API key.', 'status': 'INVALID_ARGUMENT', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'API_KEY_INVALID', 'domain': 'googleapis.com', 'metadata': {'service': 'generativelanguage.googleapis.com'}}, {'@type': 'type.googleapis.com/google.rpc.LocalizedMessage', 'locale': 'en-US', 'message': 'API Key not found. Please pass a valid API key.'}]}}
+2026-02-28 21:32:20,172 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:32:30,311 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:32:30,617 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:32:34,815 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:32:34,816 - INFO - User 5181970713: hiiii
+2026-02-28 21:32:35,441 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/sendChatAction "HTTP/1.1 200 OK"
+2026-02-28 21:32:35,442 - INFO - AFC is enabled with max remote calls: 10.
+2026-02-28 21:32:35,635 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 400 Bad Request"
+2026-02-28 21:32:35,636 - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_application.py", line 1315, in process_update
+    await coroutine
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_handlers\basehandler.py", line 159, in handle_update
+    return await self.callback(update, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\HackX\bot.py", line 189, in handle_message
+    detected_domain = classify_domain(user_text)
+  File "C:\HackX\bot.py", line 122, in classify_domain
+    response = client.models.generate_content(
+        model="gemini-2.5-flash",
+        contents=classification_prompt
+    )
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\genai\models.py", line 5644, in generate_content
+    response = self._generate_content(
+        model=model, contents=contents, config=parsed_config
+    )
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\genai\models.py", line 4306, in _generate_content
+    response = self._api_client.request(
+        'post', path, request_dict, http_options
+    )
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\genai\_api_client.py", line 1401, in request
+    response = self._request(http_request, http_options, stream=False)
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\genai\_api_client.py", line 1237, in _request
+    return self._retry(self._request_once, http_request, stream)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\tenacity\__init__.py", line 470, in __call__
+    do = self.iter(retry_state=retry_state)
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\tenacity\__init__.py", line 371, in iter
+    result = action(retry_state)
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\tenacity\__init__.py", line 413, in exc_check
+    raise retry_exc.reraise()
+          ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\tenacity\__init__.py", line 184, in reraise
+    raise self.last_attempt.result()
+          ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.3312.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.3312.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\tenacity\__init__.py", line 473, in __call__
+    result = fn(*args, **kwargs)
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\genai\_api_client.py", line 1214, in _request_once
+    errors.APIError.raise_for_response(response)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\genai\errors.py", line 134, in raise_for_response
+    cls.raise_error(response.status_code, response_json, response)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\genai\errors.py", line 159, in raise_error
+    raise ClientError(status_code, response_json, response)
+google.genai.errors.ClientError: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'API Key not found. Please pass a valid API key.', 'status': 'INVALID_ARGUMENT', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'API_KEY_INVALID', 'domain': 'googleapis.com', 'metadata': {'service': 'generativelanguage.googleapis.com'}}, {'@type': 'type.googleapis.com/google.rpc.LocalizedMessage', 'locale': 'en-US', 'message': 'API Key not found. Please pass a valid API key.'}]}}
+2026-02-28 21:32:44,954 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:32:45,086 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:32:50,379 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:32:50,380 - INFO - User 5181970713: hi
+2026-02-28 21:32:51,003 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/sendChatAction "HTTP/1.1 200 OK"
+2026-02-28 21:32:51,004 - INFO - AFC is enabled with max remote calls: 10.
+2026-02-28 21:32:51,197 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 400 Bad Request"
+2026-02-28 21:32:51,198 - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_application.py", line 1315, in process_update
+    await coroutine
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_handlers\basehandler.py", line 159, in handle_update
+    return await self.callback(update, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\HackX\bot.py", line 189, in handle_message
+    detected_domain = classify_domain(user_text)
+  File "C:\HackX\bot.py", line 122, in classify_domain
+    response = client.models.generate_content(
+        model="gemini-2.5-flash",
+        contents=classification_prompt
+    )
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\genai\models.py", line 5644, in generate_content
+    response = self._generate_content(
+        model=model, contents=contents, config=parsed_config
+    )
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\genai\models.py", line 4306, in _generate_content
+    response = self._api_client.request(
+        'post', path, request_dict, http_options
+    )
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\genai\_api_client.py", line 1401, in request
+    response = self._request(http_request, http_options, stream=False)
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\genai\_api_client.py", line 1237, in _request
+    return self._retry(self._request_once, http_request, stream)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\tenacity\__init__.py", line 470, in __call__
+    do = self.iter(retry_state=retry_state)
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\tenacity\__init__.py", line 371, in iter
+    result = action(retry_state)
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\tenacity\__init__.py", line 413, in exc_check
+    raise retry_exc.reraise()
+          ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\tenacity\__init__.py", line 184, in reraise
+    raise self.last_attempt.result()
+          ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.3312.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.3312.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\tenacity\__init__.py", line 473, in __call__
+    result = fn(*args, **kwargs)
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\genai\_api_client.py", line 1214, in _request_once
+    errors.APIError.raise_for_response(response)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\genai\errors.py", line 134, in raise_for_response
+    cls.raise_error(response.status_code, response_json, response)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\genai\errors.py", line 159, in raise_error
+    raise ClientError(status_code, response_json, response)
+google.genai.errors.ClientError: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'API Key not found. Please pass a valid API key.', 'status': 'INVALID_ARGUMENT', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'API_KEY_INVALID', 'domain': 'googleapis.com', 'metadata': {'service': 'generativelanguage.googleapis.com'}}, {'@type': 'type.googleapis.com/google.rpc.LocalizedMessage', 'locale': 'en-US', 'message': 'API Key not found. Please pass a valid API key.'}]}}
+2026-02-28 21:33:00,515 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:33:10,652 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:33:20,788 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:33:30,926 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:33:42,293 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getMe "HTTP/1.1 200 OK"
+2026-02-28 21:33:42,496 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/deleteWebhook "HTTP/1.1 200 OK"
+2026-02-28 21:33:42,497 - INFO - Application started
+2026-02-28 21:33:46,196 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:33:48,128 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:33:48,129 - INFO - User 5181970713: hi
+2026-02-28 21:33:48,760 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/sendChatAction "HTTP/1.1 200 OK"
+2026-02-28 21:33:48,760 - INFO - AFC is enabled with max remote calls: 10.
+2026-02-28 21:33:48,875 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 400 Bad Request"
+2026-02-28 21:33:48,876 - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_application.py", line 1315, in process_update
+    await coroutine
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_handlers\basehandler.py", line 159, in handle_update
+    return await self.callback(update, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\HackX\bot.py", line 189, in handle_message
+    detected_domain = classify_domain(user_text)
+  File "c:\HackX\bot.py", line 122, in classify_domain
+    response = client.models.generate_content(
+        model="gemini-2.5-flash",
+        contents=classification_prompt
+    )
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\genai\models.py", line 5644, in generate_content
+    response = self._generate_content(
+        model=model, contents=contents, config=parsed_config
+    )
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\genai\models.py", line 4306, in _generate_content
+    response = self._api_client.request(
+        'post', path, request_dict, http_options
+    )
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\genai\_api_client.py", line 1401, in request
+    response = self._request(http_request, http_options, stream=False)
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\genai\_api_client.py", line 1237, in _request
+    return self._retry(self._request_once, http_request, stream)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\tenacity\__init__.py", line 470, in __call__
+    do = self.iter(retry_state=retry_state)
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\tenacity\__init__.py", line 371, in iter
+    result = action(retry_state)
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\tenacity\__init__.py", line 413, in exc_check
+    raise retry_exc.reraise()
+          ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\tenacity\__init__.py", line 184, in reraise
+    raise self.last_attempt.result()
+          ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.3312.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.3312.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\tenacity\__init__.py", line 473, in __call__
+    result = fn(*args, **kwargs)
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\genai\_api_client.py", line 1214, in _request_once
+    errors.APIError.raise_for_response(response)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\genai\errors.py", line 134, in raise_for_response
+    cls.raise_error(response.status_code, response_json, response)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\genai\errors.py", line 159, in raise_error
+    raise ClientError(status_code, response_json, response)
+google.genai.errors.ClientError: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'API Key not found. Please pass a valid API key.', 'status': 'INVALID_ARGUMENT', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'API_KEY_INVALID', 'domain': 'googleapis.com', 'metadata': {'service': 'generativelanguage.googleapis.com'}}, {'@type': 'type.googleapis.com/google.rpc.LocalizedMessage', 'locale': 'en-US', 'message': 'API Key not found. Please pass a valid API key.'}]}}
+2026-02-28 21:33:58,367 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:34:08,606 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:34:18,951 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:34:29,188 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:34:39,427 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:34:54,581 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getMe "HTTP/1.1 200 OK"
+2026-02-28 21:34:54,785 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/deleteWebhook "HTTP/1.1 200 OK"
+2026-02-28 21:34:54,786 - INFO - Application started
+2026-02-28 21:35:05,230 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:35:08,023 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:35:10,561 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:35:10,562 - INFO - User 5181970713: hi
+2026-02-28 21:35:11,270 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/sendChatAction "HTTP/1.1 200 OK"
+2026-02-28 21:35:11,270 - INFO - AFC is enabled with max remote calls: 10.
+2026-02-28 21:35:11,391 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 400 Bad Request"
+2026-02-28 21:35:11,392 - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_application.py", line 1315, in process_update
+    await coroutine
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_handlers\basehandler.py", line 159, in handle_update
+    return await self.callback(update, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\HackX\bot.py", line 189, in handle_message
+    detected_domain = classify_domain(user_text)
+  File "c:\HackX\bot.py", line 122, in classify_domain
+    response = client.models.generate_content(
+        model="gemini-2.5-flash",
+        contents=classification_prompt
+    )
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\genai\models.py", line 5644, in generate_content
+    response = self._generate_content(
+        model=model, contents=contents, config=parsed_config
+    )
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\genai\models.py", line 4306, in _generate_content
+    response = self._api_client.request(
+        'post', path, request_dict, http_options
+    )
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\genai\_api_client.py", line 1401, in request
+    response = self._request(http_request, http_options, stream=False)
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\genai\_api_client.py", line 1237, in _request
+    return self._retry(self._request_once, http_request, stream)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\tenacity\__init__.py", line 470, in __call__
+    do = self.iter(retry_state=retry_state)
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\tenacity\__init__.py", line 371, in iter
+    result = action(retry_state)
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\tenacity\__init__.py", line 413, in exc_check
+    raise retry_exc.reraise()
+          ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\tenacity\__init__.py", line 184, in reraise
+    raise self.last_attempt.result()
+          ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.3312.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.3312.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\tenacity\__init__.py", line 473, in __call__
+    result = fn(*args, **kwargs)
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\genai\_api_client.py", line 1214, in _request_once
+    errors.APIError.raise_for_response(response)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\genai\errors.py", line 134, in raise_for_response
+    cls.raise_error(response.status_code, response_json, response)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\genai\errors.py", line 159, in raise_error
+    raise ClientError(status_code, response_json, response)
+google.genai.errors.ClientError: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'API Key not found. Please pass a valid API key.', 'status': 'INVALID_ARGUMENT', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'API_KEY_INVALID', 'domain': 'googleapis.com', 'metadata': {'service': 'generativelanguage.googleapis.com'}}, {'@type': 'type.googleapis.com/google.rpc.LocalizedMessage', 'locale': 'en-US', 'message': 'API Key not found. Please pass a valid API key.'}]}}
+2026-02-28 21:35:20,719 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:35:30,846 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:35:41,066 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:35:51,307 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:36:01,443 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:36:11,588 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:36:21,717 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:36:31,852 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:36:41,992 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:36:45,677 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 409 Conflict"
+2026-02-28 21:36:45,679 - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_utils\networkloop.py", line 161, in network_retry_loop
+    await do_action()
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_utils\networkloop.py", line 154, in do_action
+    action_cb_task.result()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_updater.py", line 340, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_extbot.py", line 671, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\_bot.py", line 4860, in get_updates
+    await self._post(
+    ^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    ),
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\_bot.py", line 703, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_extbot.py", line 369, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\_bot.py", line 732, in _do_post
+    result = await request.post(
+             ^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\request\_baserequest.py", line 198, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\request\_baserequest.py", line 375, in _request_wrapper
+    raise exception
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-28 21:36:51,000 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 409 Conflict"
+2026-02-28 21:36:51,000 - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_utils\networkloop.py", line 161, in network_retry_loop
+    await do_action()
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_utils\networkloop.py", line 154, in do_action
+    action_cb_task.result()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_updater.py", line 340, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_extbot.py", line 671, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\_bot.py", line 4860, in get_updates
+    await self._post(
+    ^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    ),
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\_bot.py", line 703, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_extbot.py", line 369, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\_bot.py", line 732, in _do_post
+    result = await request.post(
+             ^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\request\_baserequest.py", line 198, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\request\_baserequest.py", line 375, in _request_wrapper
+    raise exception
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-28 21:36:57,384 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 409 Conflict"
+2026-02-28 21:36:57,385 - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_utils\networkloop.py", line 161, in network_retry_loop
+    await do_action()
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_utils\networkloop.py", line 154, in do_action
+    action_cb_task.result()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_updater.py", line 340, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_extbot.py", line 671, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\_bot.py", line 4860, in get_updates
+    await self._post(
+    ^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    ),
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\_bot.py", line 703, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_extbot.py", line 369, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\_bot.py", line 732, in _do_post
+    result = await request.post(
+             ^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\request\_baserequest.py", line 198, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\request\_baserequest.py", line 375, in _request_wrapper
+    raise exception
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-28 21:37:05,233 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:37:05,373 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 409 Conflict"
+2026-02-28 21:37:05,374 - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_utils\networkloop.py", line 161, in network_retry_loop
+    await do_action()
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_utils\networkloop.py", line 154, in do_action
+    action_cb_task.result()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_updater.py", line 340, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_extbot.py", line 671, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\_bot.py", line 4860, in get_updates
+    await self._post(
+    ^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    ),
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\_bot.py", line 703, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_extbot.py", line 369, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\_bot.py", line 732, in _do_post
+    result = await request.post(
+             ^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\request\_baserequest.py", line 198, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\request\_baserequest.py", line 375, in _request_wrapper
+    raise exception
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-28 21:37:10,763 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 409 Conflict"
+2026-02-28 21:37:10,765 - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_utils\networkloop.py", line 161, in network_retry_loop
+    await do_action()
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_utils\networkloop.py", line 154, in do_action
+    action_cb_task.result()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_updater.py", line 340, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_extbot.py", line 671, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\_bot.py", line 4860, in get_updates
+    await self._post(
+    ^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    ),
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\_bot.py", line 703, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_extbot.py", line 369, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\_bot.py", line 732, in _do_post
+    result = await request.post(
+             ^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\request\_baserequest.py", line 198, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\request\_baserequest.py", line 375, in _request_wrapper
+    raise exception
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-28 21:37:13,630 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:37:17,096 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 409 Conflict"
+2026-02-28 21:37:17,096 - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_utils\networkloop.py", line 161, in network_retry_loop
+    await do_action()
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_utils\networkloop.py", line 154, in do_action
+    action_cb_task.result()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_updater.py", line 340, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_extbot.py", line 671, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\_bot.py", line 4860, in get_updates
+    await self._post(
+    ^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    ),
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\_bot.py", line 703, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_extbot.py", line 369, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\_bot.py", line 732, in _do_post
+    result = await request.post(
+             ^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\request\_baserequest.py", line 198, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\request\_baserequest.py", line 375, in _request_wrapper
+    raise exception
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-28 21:37:23,869 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 409 Conflict"
+2026-02-28 21:37:23,871 - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_utils\networkloop.py", line 161, in network_retry_loop
+    await do_action()
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_utils\networkloop.py", line 154, in do_action
+    action_cb_task.result()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_updater.py", line 340, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_extbot.py", line 671, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\_bot.py", line 4860, in get_updates
+    await self._post(
+    ^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    ),
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\_bot.py", line 703, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_extbot.py", line 369, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\_bot.py", line 732, in _do_post
+    result = await request.post(
+             ^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\request\_baserequest.py", line 198, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\request\_baserequest.py", line 375, in _request_wrapper
+    raise exception
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-28 21:37:32,367 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 409 Conflict"
+2026-02-28 21:37:32,368 - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_utils\networkloop.py", line 161, in network_retry_loop
+    await do_action()
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_utils\networkloop.py", line 154, in do_action
+    action_cb_task.result()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_updater.py", line 340, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_extbot.py", line 671, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\_bot.py", line 4860, in get_updates
+    await self._post(
+    ^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    ),
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\_bot.py", line 703, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_extbot.py", line 369, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\_bot.py", line 732, in _do_post
+    result = await request.post(
+             ^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\request\_baserequest.py", line 198, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\request\_baserequest.py", line 375, in _request_wrapper
+    raise exception
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-28 21:37:40,696 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getMe "HTTP/1.1 200 OK"
+2026-02-28 21:37:40,890 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/deleteWebhook "HTTP/1.1 200 OK"
+2026-02-28 21:37:40,892 - INFO - Application started
+2026-02-28 21:37:47,009 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 409 Conflict"
+2026-02-28 21:37:47,010 - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_utils\networkloop.py", line 161, in network_retry_loop
+    await do_action()
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_utils\networkloop.py", line 154, in do_action
+    action_cb_task.result()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_updater.py", line 340, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_extbot.py", line 671, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\_bot.py", line 4860, in get_updates
+    await self._post(
+    ^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    ),
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\_bot.py", line 703, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_extbot.py", line 369, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\_bot.py", line 732, in _do_post
+    result = await request.post(
+             ^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\request\_baserequest.py", line 198, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\request\_baserequest.py", line 375, in _request_wrapper
+    raise exception
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-28 21:37:49,679 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:37:51,937 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:37:51,938 - INFO - User 5181970713: hi
+2026-02-28 21:37:52,541 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 409 Conflict"
+2026-02-28 21:37:52,542 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/sendChatAction "HTTP/1.1 200 OK"
+2026-02-28 21:37:52,543 - INFO - AFC is enabled with max remote calls: 10.
+2026-02-28 21:37:52,766 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 400 Bad Request"
+2026-02-28 21:37:52,768 - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_application.py", line 1315, in process_update
+    await coroutine
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_handlers\basehandler.py", line 159, in handle_update
+    return await self.callback(update, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\HackX\bot.py", line 189, in handle_message
+    detected_domain = classify_domain(user_text)
+  File "c:\HackX\bot.py", line 122, in classify_domain
+    response = client.models.generate_content(
+        model="gemini-2.5-flash",
+        contents=classification_prompt
+    )
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\genai\models.py", line 5644, in generate_content
+    response = self._generate_content(
+        model=model, contents=contents, config=parsed_config
+    )
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\genai\models.py", line 4306, in _generate_content
+    response = self._api_client.request(
+        'post', path, request_dict, http_options
+    )
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\genai\_api_client.py", line 1401, in request
+    response = self._request(http_request, http_options, stream=False)
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\genai\_api_client.py", line 1237, in _request
+    return self._retry(self._request_once, http_request, stream)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\tenacity\__init__.py", line 470, in __call__
+    do = self.iter(retry_state=retry_state)
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\tenacity\__init__.py", line 371, in iter
+    result = action(retry_state)
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\tenacity\__init__.py", line 413, in exc_check
+    raise retry_exc.reraise()
+          ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\tenacity\__init__.py", line 184, in reraise
+    raise self.last_attempt.result()
+          ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.3312.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.3312.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\tenacity\__init__.py", line 473, in __call__
+    result = fn(*args, **kwargs)
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\genai\_api_client.py", line 1214, in _request_once
+    errors.APIError.raise_for_response(response)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\genai\errors.py", line 134, in raise_for_response
+    cls.raise_error(response.status_code, response_json, response)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\genai\errors.py", line 159, in raise_error
+    raise ClientError(status_code, response_json, response)
+google.genai.errors.ClientError: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'API Key not found. Please pass a valid API key.', 'status': 'INVALID_ARGUMENT', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'API_KEY_INVALID', 'domain': 'googleapis.com', 'metadata': {'service': 'generativelanguage.googleapis.com'}}, {'@type': 'type.googleapis.com/google.rpc.LocalizedMessage', 'locale': 'en-US', 'message': 'API Key not found. Please pass a valid API key.'}]}}
+2026-02-28 21:37:52,782 - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_utils\networkloop.py", line 161, in network_retry_loop
+    await do_action()
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_utils\networkloop.py", line 154, in do_action
+    action_cb_task.result()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_updater.py", line 340, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_extbot.py", line 671, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\_bot.py", line 4860, in get_updates
+    await self._post(
+    ^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    ),
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\_bot.py", line 703, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_extbot.py", line 369, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\_bot.py", line 732, in _do_post
+    result = await request.post(
+             ^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\request\_baserequest.py", line 198, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\request\_baserequest.py", line 375, in _request_wrapper
+    raise exception
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-28 21:37:57,158 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:37:57,160 - INFO - User 5181970713: hello
+2026-02-28 21:37:57,467 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/sendChatAction "HTTP/1.1 200 OK"
+2026-02-28 21:37:57,468 - INFO - AFC is enabled with max remote calls: 10.
+2026-02-28 21:37:57,572 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 400 Bad Request"
+2026-02-28 21:37:57,574 - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_application.py", line 1315, in process_update
+    await coroutine
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_handlers\basehandler.py", line 159, in handle_update
+    return await self.callback(update, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\HackX\bot.py", line 189, in handle_message
+    detected_domain = classify_domain(user_text)
+  File "c:\HackX\bot.py", line 122, in classify_domain
+    response = client.models.generate_content(
+        model="gemini-2.5-flash",
+        contents=classification_prompt
+    )
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\genai\models.py", line 5644, in generate_content
+    response = self._generate_content(
+        model=model, contents=contents, config=parsed_config
+    )
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\genai\models.py", line 4306, in _generate_content
+    response = self._api_client.request(
+        'post', path, request_dict, http_options
+    )
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\genai\_api_client.py", line 1401, in request
+    response = self._request(http_request, http_options, stream=False)
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\genai\_api_client.py", line 1237, in _request
+    return self._retry(self._request_once, http_request, stream)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\tenacity\__init__.py", line 470, in __call__
+    do = self.iter(retry_state=retry_state)
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\tenacity\__init__.py", line 371, in iter
+    result = action(retry_state)
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\tenacity\__init__.py", line 413, in exc_check
+    raise retry_exc.reraise()
+          ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\tenacity\__init__.py", line 184, in reraise
+    raise self.last_attempt.result()
+          ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.3312.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.3312.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\tenacity\__init__.py", line 473, in __call__
+    result = fn(*args, **kwargs)
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\genai\_api_client.py", line 1214, in _request_once
+    errors.APIError.raise_for_response(response)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\genai\errors.py", line 134, in raise_for_response
+    cls.raise_error(response.status_code, response_json, response)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\genai\errors.py", line 159, in raise_error
+    raise ClientError(status_code, response_json, response)
+google.genai.errors.ClientError: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'API Key not found. Please pass a valid API key.', 'status': 'INVALID_ARGUMENT', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'API_KEY_INVALID', 'domain': 'googleapis.com', 'metadata': {'service': 'generativelanguage.googleapis.com'}}, {'@type': 'type.googleapis.com/google.rpc.LocalizedMessage', 'locale': 'en-US', 'message': 'API Key not found. Please pass a valid API key.'}]}}
+2026-02-28 21:37:58,716 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 409 Conflict"
+2026-02-28 21:37:58,716 - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_utils\networkloop.py", line 161, in network_retry_loop
+    await do_action()
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_utils\networkloop.py", line 154, in do_action
+    action_cb_task.result()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_updater.py", line 340, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_extbot.py", line 671, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\_bot.py", line 4860, in get_updates
+    await self._post(
+    ^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    ),
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\_bot.py", line 703, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_extbot.py", line 369, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\_bot.py", line 732, in _do_post
+    result = await request.post(
+             ^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\request\_baserequest.py", line 198, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\request\_baserequest.py", line 375, in _request_wrapper
+    raise exception
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-28 21:38:05,543 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 409 Conflict"
+2026-02-28 21:38:05,544 - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_utils\networkloop.py", line 161, in network_retry_loop
+    await do_action()
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_utils\networkloop.py", line 154, in do_action
+    action_cb_task.result()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_updater.py", line 340, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_extbot.py", line 671, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\_bot.py", line 4860, in get_updates
+    await self._post(
+    ^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    ),
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\_bot.py", line 703, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_extbot.py", line 369, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\_bot.py", line 732, in _do_post
+    result = await request.post(
+             ^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\request\_baserequest.py", line 198, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\request\_baserequest.py", line 375, in _request_wrapper
+    raise exception
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-28 21:38:13,939 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 409 Conflict"
+2026-02-28 21:38:13,939 - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_utils\networkloop.py", line 161, in network_retry_loop
+    await do_action()
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_utils\networkloop.py", line 154, in do_action
+    action_cb_task.result()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_updater.py", line 340, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_extbot.py", line 671, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\_bot.py", line 4860, in get_updates
+    await self._post(
+    ^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    ),
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\_bot.py", line 703, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_extbot.py", line 369, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\_bot.py", line 732, in _do_post
+    result = await request.post(
+             ^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\request\_baserequest.py", line 198, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\request\_baserequest.py", line 375, in _request_wrapper
+    raise exception
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-28 21:38:25,129 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 409 Conflict"
+2026-02-28 21:38:25,129 - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_utils\networkloop.py", line 161, in network_retry_loop
+    await do_action()
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_utils\networkloop.py", line 154, in do_action
+    action_cb_task.result()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_updater.py", line 340, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_extbot.py", line 671, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\_bot.py", line 4860, in get_updates
+    await self._post(
+    ^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    ),
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\_bot.py", line 703, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_extbot.py", line 369, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\_bot.py", line 732, in _do_post
+    result = await request.post(
+             ^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\request\_baserequest.py", line 198, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\request\_baserequest.py", line 375, in _request_wrapper
+    raise exception
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-28 21:38:37,103 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 409 Conflict"
+2026-02-28 21:38:37,104 - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_utils\networkloop.py", line 161, in network_retry_loop
+    await do_action()
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_utils\networkloop.py", line 154, in do_action
+    action_cb_task.result()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_updater.py", line 340, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_extbot.py", line 671, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\_bot.py", line 4860, in get_updates
+    await self._post(
+    ^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    ),
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\_bot.py", line 703, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_extbot.py", line 369, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\_bot.py", line 732, in _do_post
+    result = await request.post(
+             ^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\request\_baserequest.py", line 198, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\request\_baserequest.py", line 375, in _request_wrapper
+    raise exception
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-28 21:38:52,640 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:38:54,617 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 409 Conflict"
+2026-02-28 21:38:54,618 - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_utils\networkloop.py", line 161, in network_retry_loop
+    await do_action()
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_utils\networkloop.py", line 154, in do_action
+    action_cb_task.result()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_updater.py", line 340, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_extbot.py", line 671, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\_bot.py", line 4860, in get_updates
+    await self._post(
+    ^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    ),
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\_bot.py", line 703, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_extbot.py", line 369, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\_bot.py", line 732, in _do_post
+    result = await request.post(
+             ^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\request\_baserequest.py", line 198, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\request\_baserequest.py", line 375, in _request_wrapper
+    raise exception
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-28 21:39:05,757 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:39:15,889 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:39:16,297 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 409 Conflict"
+2026-02-28 21:39:16,298 - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_utils\networkloop.py", line 161, in network_retry_loop
+    await do_action()
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_utils\networkloop.py", line 154, in do_action
+    action_cb_task.result()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_updater.py", line 340, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_extbot.py", line 671, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\_bot.py", line 4860, in get_updates
+    await self._post(
+    ^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    ),
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\_bot.py", line 703, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_extbot.py", line 369, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\_bot.py", line 732, in _do_post
+    result = await request.post(
+             ^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\request\_baserequest.py", line 198, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\request\_baserequest.py", line 375, in _request_wrapper
+    raise exception
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-28 21:39:27,451 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:39:37,595 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:39:46,606 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 409 Conflict"
+2026-02-28 21:39:46,606 - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_utils\networkloop.py", line 161, in network_retry_loop
+    await do_action()
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_utils\networkloop.py", line 154, in do_action
+    action_cb_task.result()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_updater.py", line 340, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_extbot.py", line 671, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\_bot.py", line 4860, in get_updates
+    await self._post(
+    ^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    ),
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\_bot.py", line 703, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_extbot.py", line 369, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\_bot.py", line 732, in _do_post
+    result = await request.post(
+             ^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\request\_baserequest.py", line 198, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\request\_baserequest.py", line 375, in _request_wrapper
+    raise exception
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-28 21:39:57,760 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:40:07,904 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:40:18,041 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:40:21,318 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 409 Conflict"
+2026-02-28 21:40:21,318 - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_utils\networkloop.py", line 161, in network_retry_loop
+    await do_action()
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_utils\networkloop.py", line 154, in do_action
+    action_cb_task.result()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_updater.py", line 340, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_extbot.py", line 671, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\_bot.py", line 4860, in get_updates
+    await self._post(
+    ^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    ),
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\_bot.py", line 703, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_extbot.py", line 369, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\_bot.py", line 732, in _do_post
+    result = await request.post(
+             ^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\request\_baserequest.py", line 198, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\request\_baserequest.py", line 375, in _request_wrapper
+    raise exception
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-28 21:40:32,479 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:40:42,616 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:40:52,758 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:41:02,892 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:41:13,028 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:41:23,165 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:41:33,301 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:41:43,439 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:41:53,576 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:42:03,714 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:42:13,850 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:42:23,987 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:42:34,123 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:42:44,261 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:42:54,397 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:43:04,531 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:43:14,689 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:43:24,827 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:43:34,958 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:43:45,090 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:43:55,223 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:44:05,358 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:44:15,496 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:44:22,459 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getMe "HTTP/1.1 200 OK"
+2026-02-28 21:44:22,664 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/deleteWebhook "HTTP/1.1 200 OK"
+2026-02-28 21:44:22,665 - INFO - Application started
+2026-02-28 21:44:30,677 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:44:34,254 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:44:34,255 - INFO - User 5181970713: hi
+2026-02-28 21:44:35,055 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/sendChatAction "HTTP/1.1 200 OK"
+2026-02-28 21:44:35,055 - INFO - AFC is enabled with max remote calls: 10.
+2026-02-28 21:44:35,186 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 400 Bad Request"
+2026-02-28 21:44:35,188 - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_application.py", line 1315, in process_update
+    await coroutine
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_handlers\basehandler.py", line 159, in handle_update
+    return await self.callback(update, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\HackX\bot.py", line 190, in handle_message
+    detected_domain = classify_domain(user_text)
+  File "c:\HackX\bot.py", line 122, in classify_domain
+    response = client.models.generate_content(
+        model="gemini-2.5-flash",
+        contents=classification_prompt
+    )
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\genai\models.py", line 5644, in generate_content
+    response = self._generate_content(
+        model=model, contents=contents, config=parsed_config
+    )
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\genai\models.py", line 4306, in _generate_content
+    response = self._api_client.request(
+        'post', path, request_dict, http_options
+    )
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\genai\_api_client.py", line 1401, in request
+    response = self._request(http_request, http_options, stream=False)
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\genai\_api_client.py", line 1237, in _request
+    return self._retry(self._request_once, http_request, stream)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\tenacity\__init__.py", line 470, in __call__
+    do = self.iter(retry_state=retry_state)
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\tenacity\__init__.py", line 371, in iter
+    result = action(retry_state)
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\tenacity\__init__.py", line 413, in exc_check
+    raise retry_exc.reraise()
+          ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\tenacity\__init__.py", line 184, in reraise
+    raise self.last_attempt.result()
+          ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.3312.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.3312.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\tenacity\__init__.py", line 473, in __call__
+    result = fn(*args, **kwargs)
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\genai\_api_client.py", line 1214, in _request_once
+    errors.APIError.raise_for_response(response)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\genai\errors.py", line 134, in raise_for_response
+    cls.raise_error(response.status_code, response_json, response)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\genai\errors.py", line 159, in raise_error
+    raise ClientError(status_code, response_json, response)
+google.genai.errors.ClientError: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'API Key not found. Please pass a valid API key.', 'status': 'INVALID_ARGUMENT', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'API_KEY_INVALID', 'domain': 'googleapis.com', 'metadata': {'service': 'generativelanguage.googleapis.com'}}, {'@type': 'type.googleapis.com/google.rpc.LocalizedMessage', 'locale': 'en-US', 'message': 'API Key not found. Please pass a valid API key.'}]}}
+2026-02-28 21:44:44,394 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:44:54,726 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:45:04,867 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:45:15,091 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:45:25,234 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:45:35,375 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:45:45,514 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:45:55,654 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:46:04,046 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:46:04,046 - INFO - Application is stopping. This might take a moment.
+2026-02-28 21:46:04,046 - INFO - Application.stop() complete
+2026-02-28 21:46:10,386 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getMe "HTTP/1.1 200 OK"
+2026-02-28 21:46:10,587 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/deleteWebhook "HTTP/1.1 200 OK"
+2026-02-28 21:46:10,588 - INFO - Application started
+2026-02-28 21:46:15,726 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:46:17,173 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:46:17,175 - INFO - User 5181970713: hi
+2026-02-28 21:46:17,175 - INFO - AFC is enabled with max remote calls: 10.
+2026-02-28 21:46:17,354 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 400 Bad Request"
+2026-02-28 21:46:17,356 - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_application.py", line 1315, in process_update
+    await coroutine
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_handlers\basehandler.py", line 159, in handle_update
+    return await self.callback(update, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\HackX\bot.py", line 190, in handle_message
+    detected_domain = classify_domain(user_text)
+  File "c:\HackX\bot.py", line 122, in classify_domain
+    response = client.models.generate_content(
+        model="gemini-2.5-flash",
+        contents=classification_prompt
+    )
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\genai\models.py", line 5644, in generate_content
+    response = self._generate_content(
+        model=model, contents=contents, config=parsed_config
+    )
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\genai\models.py", line 4306, in _generate_content
+    response = self._api_client.request(
+        'post', path, request_dict, http_options
+    )
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\genai\_api_client.py", line 1401, in request
+    response = self._request(http_request, http_options, stream=False)
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\genai\_api_client.py", line 1237, in _request
+    return self._retry(self._request_once, http_request, stream)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\tenacity\__init__.py", line 470, in __call__
+    do = self.iter(retry_state=retry_state)
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\tenacity\__init__.py", line 371, in iter
+    result = action(retry_state)
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\tenacity\__init__.py", line 413, in exc_check
+    raise retry_exc.reraise()
+          ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\tenacity\__init__.py", line 184, in reraise
+    raise self.last_attempt.result()
+          ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.3312.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.3312.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\tenacity\__init__.py", line 473, in __call__
+    result = fn(*args, **kwargs)
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\genai\_api_client.py", line 1214, in _request_once
+    errors.APIError.raise_for_response(response)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\genai\errors.py", line 134, in raise_for_response
+    cls.raise_error(response.status_code, response_json, response)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\genai\errors.py", line 159, in raise_error
+    raise ClientError(status_code, response_json, response)
+google.genai.errors.ClientError: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'API Key not found. Please pass a valid API key.', 'status': 'INVALID_ARGUMENT', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'API_KEY_INVALID', 'domain': 'googleapis.com', 'metadata': {'service': 'generativelanguage.googleapis.com'}}, {'@type': 'type.googleapis.com/google.rpc.LocalizedMessage', 'locale': 'en-US', 'message': 'API Key not found. Please pass a valid API key.'}]}}
+2026-02-28 21:46:27,588 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:46:31,067 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:46:31,068 - INFO - User 5181970713: what is aerodynamics?
+2026-02-28 21:46:31,069 - INFO - AFC is enabled with max remote calls: 10.
+2026-02-28 21:46:31,183 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 400 Bad Request"
+2026-02-28 21:46:31,183 - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_application.py", line 1315, in process_update
+    await coroutine
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_handlers\basehandler.py", line 159, in handle_update
+    return await self.callback(update, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\HackX\bot.py", line 190, in handle_message
+    detected_domain = classify_domain(user_text)
+  File "c:\HackX\bot.py", line 122, in classify_domain
+    response = client.models.generate_content(
+        model="gemini-2.5-flash",
+        contents=classification_prompt
+    )
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\genai\models.py", line 5644, in generate_content
+    response = self._generate_content(
+        model=model, contents=contents, config=parsed_config
+    )
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\genai\models.py", line 4306, in _generate_content
+    response = self._api_client.request(
+        'post', path, request_dict, http_options
+    )
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\genai\_api_client.py", line 1401, in request
+    response = self._request(http_request, http_options, stream=False)
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\genai\_api_client.py", line 1237, in _request
+    return self._retry(self._request_once, http_request, stream)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\tenacity\__init__.py", line 470, in __call__
+    do = self.iter(retry_state=retry_state)
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\tenacity\__init__.py", line 371, in iter
+    result = action(retry_state)
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\tenacity\__init__.py", line 413, in exc_check
+    raise retry_exc.reraise()
+          ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\tenacity\__init__.py", line 184, in reraise
+    raise self.last_attempt.result()
+          ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.3312.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.3312.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\tenacity\__init__.py", line 473, in __call__
+    result = fn(*args, **kwargs)
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\genai\_api_client.py", line 1214, in _request_once
+    errors.APIError.raise_for_response(response)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\genai\errors.py", line 134, in raise_for_response
+    cls.raise_error(response.status_code, response_json, response)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\genai\errors.py", line 159, in raise_error
+    raise ClientError(status_code, response_json, response)
+google.genai.errors.ClientError: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'API Key not found. Please pass a valid API key.', 'status': 'INVALID_ARGUMENT', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'API_KEY_INVALID', 'domain': 'googleapis.com', 'metadata': {'service': 'generativelanguage.googleapis.com'}}, {'@type': 'type.googleapis.com/google.rpc.LocalizedMessage', 'locale': 'en-US', 'message': 'API Key not found. Please pass a valid API key.'}]}}
+2026-02-28 21:46:41,335 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:46:54,822 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getMe "HTTP/1.1 200 OK"
+2026-02-28 21:46:54,955 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/deleteWebhook "HTTP/1.1 200 OK"
+2026-02-28 21:46:54,956 - INFO - Application started
+2026-02-28 21:47:05,472 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:47:15,608 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:47:25,747 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:47:35,884 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:47:46,022 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:47:56,159 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:48:06,297 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:48:16,438 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:48:26,581 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:48:36,718 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:48:43,974 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:48:43,975 - INFO - Application is stopping. This might take a moment.
+2026-02-28 21:48:43,975 - INFO - Application.stop() complete
+2026-02-28 21:48:55,574 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getMe "HTTP/1.1 200 OK"
+2026-02-28 21:48:55,751 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/deleteWebhook "HTTP/1.1 200 OK"
+2026-02-28 21:48:55,752 - INFO - Application started
+2026-02-28 21:49:02,097 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:49:03,242 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:49:03,243 - INFO - User 5181970713: hi
+2026-02-28 21:49:03,869 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/sendChatAction "HTTP/1.1 200 OK"
+2026-02-28 21:49:03,869 - INFO - AFC is enabled with max remote calls: 10.
+2026-02-28 21:49:04,146 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 400 Bad Request"
+2026-02-28 21:49:04,148 - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_application.py", line 1315, in process_update
+    await coroutine
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_handlers\basehandler.py", line 159, in handle_update
+    return await self.callback(update, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\HackX\bot.py", line 191, in handle_message
+    detected_domain = classify_domain(user_text)
+  File "c:\HackX\bot.py", line 122, in classify_domain
+    response = client.models.generate_content(
+        model="gemini-2.5-flash",
+        contents=classification_prompt
+    )
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\genai\models.py", line 5644, in generate_content
+    response = self._generate_content(
+        model=model, contents=contents, config=parsed_config
+    )
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\genai\models.py", line 4306, in _generate_content
+    response = self._api_client.request(
+        'post', path, request_dict, http_options
+    )
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\genai\_api_client.py", line 1401, in request
+    response = self._request(http_request, http_options, stream=False)
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\genai\_api_client.py", line 1237, in _request
+    return self._retry(self._request_once, http_request, stream)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\tenacity\__init__.py", line 470, in __call__
+    do = self.iter(retry_state=retry_state)
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\tenacity\__init__.py", line 371, in iter
+    result = action(retry_state)
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\tenacity\__init__.py", line 413, in exc_check
+    raise retry_exc.reraise()
+          ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\tenacity\__init__.py", line 184, in reraise
+    raise self.last_attempt.result()
+          ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.3312.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.3312.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\tenacity\__init__.py", line 473, in __call__
+    result = fn(*args, **kwargs)
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\genai\_api_client.py", line 1214, in _request_once
+    errors.APIError.raise_for_response(response)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\genai\errors.py", line 134, in raise_for_response
+    cls.raise_error(response.status_code, response_json, response)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\genai\errors.py", line 159, in raise_error
+    raise ClientError(status_code, response_json, response)
+google.genai.errors.ClientError: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'API Key not found. Please pass a valid API key.', 'status': 'INVALID_ARGUMENT', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'API_KEY_INVALID', 'domain': 'googleapis.com', 'metadata': {'service': 'generativelanguage.googleapis.com'}}, {'@type': 'type.googleapis.com/google.rpc.LocalizedMessage', 'locale': 'en-US', 'message': 'API Key not found. Please pass a valid API key.'}]}}
+2026-02-28 21:49:13,382 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:49:27,302 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getMe "HTTP/1.1 200 OK"
+2026-02-28 21:49:27,500 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/deleteWebhook "HTTP/1.1 200 OK"
+2026-02-28 21:49:27,501 - INFO - Application started
+2026-02-28 21:49:28,534 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:49:30,685 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:49:30,690 - INFO - User 5181970713: hi
+2026-02-28 21:49:31,077 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/sendChatAction "HTTP/1.1 200 OK"
+2026-02-28 21:49:31,078 - INFO - AFC is enabled with max remote calls: 10.
+2026-02-28 21:49:31,198 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 400 Bad Request"
+2026-02-28 21:49:31,199 - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_application.py", line 1315, in process_update
+    await coroutine
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_handlers\basehandler.py", line 159, in handle_update
+    return await self.callback(update, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\HackX\bot.py", line 192, in handle_message
+    detected_domain = classify_domain(user_text)
+  File "c:\HackX\bot.py", line 122, in classify_domain
+    response = client.models.generate_content(
+        model="gemini-2.5-flash",
+        contents=classification_prompt
+    )
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\genai\models.py", line 5644, in generate_content
+    response = self._generate_content(
+        model=model, contents=contents, config=parsed_config
+    )
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\genai\models.py", line 4306, in _generate_content
+    response = self._api_client.request(
+        'post', path, request_dict, http_options
+    )
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\genai\_api_client.py", line 1401, in request
+    response = self._request(http_request, http_options, stream=False)
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\genai\_api_client.py", line 1237, in _request
+    return self._retry(self._request_once, http_request, stream)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\tenacity\__init__.py", line 470, in __call__
+    do = self.iter(retry_state=retry_state)
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\tenacity\__init__.py", line 371, in iter
+    result = action(retry_state)
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\tenacity\__init__.py", line 413, in exc_check
+    raise retry_exc.reraise()
+          ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\tenacity\__init__.py", line 184, in reraise
+    raise self.last_attempt.result()
+          ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.3312.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.3312.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\tenacity\__init__.py", line 473, in __call__
+    result = fn(*args, **kwargs)
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\genai\_api_client.py", line 1214, in _request_once
+    errors.APIError.raise_for_response(response)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\genai\errors.py", line 134, in raise_for_response
+    cls.raise_error(response.status_code, response_json, response)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\genai\errors.py", line 159, in raise_error
+    raise ClientError(status_code, response_json, response)
+google.genai.errors.ClientError: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'API Key not found. Please pass a valid API key.', 'status': 'INVALID_ARGUMENT', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'API_KEY_INVALID', 'domain': 'googleapis.com', 'metadata': {'service': 'generativelanguage.googleapis.com'}}, {'@type': 'type.googleapis.com/google.rpc.LocalizedMessage', 'locale': 'en-US', 'message': 'API Key not found. Please pass a valid API key.'}]}}
+2026-02-28 21:49:40,825 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:49:50,963 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:50:01,180 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:50:11,319 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:50:21,464 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:50:31,622 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:50:37,939 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getMe "HTTP/1.1 200 OK"
+2026-02-28 21:50:38,143 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/deleteWebhook "HTTP/1.1 200 OK"
+2026-02-28 21:50:38,145 - INFO - Application started
+2026-02-28 21:50:45,645 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:50:47,167 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:50:47,169 - INFO - User 5181970713: hi
+2026-02-28 21:50:47,169 - INFO - AFC is enabled with max remote calls: 10.
+2026-02-28 21:50:47,291 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 400 Bad Request"
+2026-02-28 21:50:47,293 - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_application.py", line 1315, in process_update
+    await coroutine
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_handlers\basehandler.py", line 159, in handle_update
+    return await self.callback(update, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\HackX\bot.py", line 191, in handle_message
+    detected_domain = classify_domain(user_text)
+  File "c:\HackX\bot.py", line 122, in classify_domain
+    response = client.models.generate_content(
+        model="gemini-2.5-flash",
+        contents=classification_prompt
+    )
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\genai\models.py", line 5644, in generate_content
+    response = self._generate_content(
+        model=model, contents=contents, config=parsed_config
+    )
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\genai\models.py", line 4306, in _generate_content
+    response = self._api_client.request(
+        'post', path, request_dict, http_options
+    )
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\genai\_api_client.py", line 1401, in request
+    response = self._request(http_request, http_options, stream=False)
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\genai\_api_client.py", line 1237, in _request
+    return self._retry(self._request_once, http_request, stream)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\tenacity\__init__.py", line 470, in __call__
+    do = self.iter(retry_state=retry_state)
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\tenacity\__init__.py", line 371, in iter
+    result = action(retry_state)
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\tenacity\__init__.py", line 413, in exc_check
+    raise retry_exc.reraise()
+          ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\tenacity\__init__.py", line 184, in reraise
+    raise self.last_attempt.result()
+          ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.3312.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.3312.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\tenacity\__init__.py", line 473, in __call__
+    result = fn(*args, **kwargs)
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\genai\_api_client.py", line 1214, in _request_once
+    errors.APIError.raise_for_response(response)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\genai\errors.py", line 134, in raise_for_response
+    cls.raise_error(response.status_code, response_json, response)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\genai\errors.py", line 159, in raise_error
+    raise ClientError(status_code, response_json, response)
+google.genai.errors.ClientError: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'API Key not found. Please pass a valid API key.', 'status': 'INVALID_ARGUMENT', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'API_KEY_INVALID', 'domain': 'googleapis.com', 'metadata': {'service': 'generativelanguage.googleapis.com'}}, {'@type': 'type.googleapis.com/google.rpc.LocalizedMessage', 'locale': 'en-US', 'message': 'API Key not found. Please pass a valid API key.'}]}}
+2026-02-28 21:50:57,603 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:51:07,745 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:51:17,896 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:51:28,036 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:51:38,181 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:51:48,401 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:51:58,552 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:52:08,764 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:52:18,921 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:52:29,140 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:52:39,295 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:52:49,442 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:52:59,583 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:53:09,790 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:53:19,951 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:53:30,385 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:53:40,541 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:53:55,254 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getMe "HTTP/1.1 200 OK"
+2026-02-28 21:53:55,390 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/deleteWebhook "HTTP/1.1 200 OK"
+2026-02-28 21:53:55,391 - INFO - Application started
+2026-02-28 21:53:59,568 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:54:01,706 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:54:01,707 - INFO - User 5181970713: hi
+2026-02-28 21:54:01,708 - INFO - AFC is enabled with max remote calls: 10.
+2026-02-28 21:54:01,909 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 400 Bad Request"
+2026-02-28 21:54:01,910 - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_application.py", line 1315, in process_update
+    await coroutine
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\telegram\ext\_handlers\basehandler.py", line 159, in handle_update
+    return await self.callback(update, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\HackX\bot.py", line 191, in handle_message
+    detected_domain = classify_domain(user_text)
+  File "c:\HackX\bot.py", line 122, in classify_domain
+    response = client.models.generate_content(
+        model="gemini-2.5-flash",
+        contents=classification_prompt
+    )
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\genai\models.py", line 5644, in generate_content
+    response = self._generate_content(
+        model=model, contents=contents, config=parsed_config
+    )
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\genai\models.py", line 4306, in _generate_content
+    response = self._api_client.request(
+        'post', path, request_dict, http_options
+    )
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\genai\_api_client.py", line 1401, in request
+    response = self._request(http_request, http_options, stream=False)
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\genai\_api_client.py", line 1237, in _request
+    return self._retry(self._request_once, http_request, stream)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\tenacity\__init__.py", line 470, in __call__
+    do = self.iter(retry_state=retry_state)
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\tenacity\__init__.py", line 371, in iter
+    result = action(retry_state)
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\tenacity\__init__.py", line 413, in exc_check
+    raise retry_exc.reraise()
+          ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\tenacity\__init__.py", line 184, in reraise
+    raise self.last_attempt.result()
+          ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.3312.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.3312.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\tenacity\__init__.py", line 473, in __call__
+    result = fn(*args, **kwargs)
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\genai\_api_client.py", line 1214, in _request_once
+    errors.APIError.raise_for_response(response)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\genai\errors.py", line 134, in raise_for_response
+    cls.raise_error(response.status_code, response_json, response)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manas\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\genai\errors.py", line 159, in raise_error
+    raise ClientError(status_code, response_json, response)
+google.genai.errors.ClientError: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'API Key not found. Please pass a valid API key.', 'status': 'INVALID_ARGUMENT', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'API_KEY_INVALID', 'domain': 'googleapis.com', 'metadata': {'service': 'generativelanguage.googleapis.com'}}, {'@type': 'type.googleapis.com/google.rpc.LocalizedMessage', 'locale': 'en-US', 'message': 'API Key not found. Please pass a valid API key.'}]}}
+2026-02-28 21:54:12,074 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:54:22,208 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:54:32,357 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:54:42,570 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:54:52,710 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:55:02,863 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:55:13,000 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:55:23,212 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:55:33,364 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:55:43,588 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:55:53,829 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:56:04,067 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:56:14,309 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:56:24,548 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:56:34,785 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:56:44,934 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:56:55,082 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:57:05,284 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:57:15,438 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:57:25,581 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:57:35,731 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:57:45,951 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:57:54,245 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getMe "HTTP/1.1 200 OK"
+2026-02-28 21:57:54,381 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/deleteWebhook "HTTP/1.1 200 OK"
+2026-02-28 21:57:54,382 - INFO - Application started
+2026-02-28 21:58:04,899 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:58:15,035 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:58:25,173 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:58:35,431 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:58:45,568 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:58:55,705 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:59:05,844 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:59:15,986 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 21:59:45,761 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getMe "HTTP/1.1 200 OK"
+2026-02-28 21:59:46,062 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/deleteWebhook "HTTP/1.1 200 OK"
+2026-02-28 21:59:46,064 - INFO - Application started
+2026-02-28 21:59:56,942 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 22:00:07,156 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 22:00:14,939 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getMe "HTTP/1.1 200 OK"
+2026-02-28 22:00:15,072 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/deleteWebhook "HTTP/1.1 200 OK"
+2026-02-28 22:00:15,074 - INFO - Application started
+2026-02-28 22:00:17,323 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 22:00:21,199 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 22:00:21,200 - INFO - User 5181970713: hi
+2026-02-28 22:00:21,815 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/sendChatAction "HTTP/1.1 200 OK"
+2026-02-28 22:00:21,815 - INFO - AFC is enabled with max remote calls: 10.
+2026-02-28 22:00:23,437 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-02-28 22:00:23,444 - INFO - AFC is enabled with max remote calls: 10.
+2026-02-28 22:00:26,104 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-02-28 22:00:26,109 - INFO - AFC is enabled with max remote calls: 10.
+2026-02-28 22:00:27,540 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-02-28 22:00:27,541 - INFO - Bot response to 5181970713: - Response:
+Hi there! How can I help you today?
+2026-02-28 22:00:28,454 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/sendMessage "HTTP/1.1 200 OK"
+2026-02-28 22:00:31,341 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 22:00:41,477 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 22:00:51,612 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 22:01:01,745 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 22:01:11,882 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 22:01:22,020 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 22:01:32,151 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 22:01:42,285 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"

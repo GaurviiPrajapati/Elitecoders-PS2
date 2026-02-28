@@ -170,7 +170,6 @@ async def set_mode_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user_id = update.message.from_user.id
     user_text = update.message.text
-
     logging.info(f"User {user_id}: {user_text}")
 
     # ==============================
@@ -189,7 +188,6 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     detected_domain = classify_domain(user_text)
     print(f"Detected domain: {detected_domain}")
     try:
-        detected_domain = classify_domain(user_text)
 
         # Create new session if new user OR domain changed / missing chat
         if user_id not in user_sessions:
