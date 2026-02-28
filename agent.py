@@ -42,6 +42,12 @@ class AgentFactory:
         - Never answer outside your defined domain.
         - If query is outside scope, respond:
         "This query is outside the current domain scope."
+
+        FINAL RESPONSE RULES:
+        - Summarize tool results concisely.
+        - Do NOT include raw scraped text.
+        - Limit answer to 600 words maximum.
+        - Provide a clean "Sources" section at the end.
         """
 
         agent = create_agent(

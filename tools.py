@@ -33,7 +33,7 @@ def WebSearchTool(query: str) -> str:
         formatted.append({
             "title": item["title"],
             "url": item["url"],
-            "content": item["content"]
+            "snippet": item["content"][:1500]
         })
 
     return json.dumps({

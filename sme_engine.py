@@ -34,6 +34,13 @@ Scope:
                 prompt += f"- {step}\n"
 
         prompt += """
+            RESPONSE LENGTH POLICY:
+            - Maximum 500 words.
+            - Use concise bullet points.
+            - Avoid unnecessary elaboration.
+            - Do NOT exceed requested scope.
+            -If the user is a beginner or asks a general question, prefer CLIENT SUMMARY MODE unless explicitly requested otherwise.
+            
             Grounding & Citation Rules:
             - If internal knowledge is insufficient, use the WebSearch tool.
             - You MUST extract source URLs from tool results.

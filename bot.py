@@ -128,7 +128,7 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
             }
 
         agent = user_agents[user_id]["agent"]
-
+        print("Invoking agent...")
         response = agent.invoke({
             "messages": [
                 {"role": "user", "content": user_text}
@@ -137,16 +137,25 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
         last_message = response["messages"][-1]
 
-        if isinstance(last_message.content, list):
-            # Extract only text blocks
-            text_parts = [
-                block["text"]
-                for block in last_message.content
-                if block.get("type") == "text"
-            ]
-            reply = "\n".join(text_parts)
-        else:
-            reply = last_message.content
+        reply = ""
+
+        if hasattr(last_message, "content"):
+            if isinstance(last_message.content, list):
+                text_parts = [
+                    block.get("text", "")
+                    for block in last_message.content
+                    if isinstance(block, dict) and block.get("type") == "text"
+                ]
+                reply = "\n".join(text_parts)
+            else:
+                reply = str(last_message.content)
+
+        # Fallback protection
+        if not reply.strip():
+            reply = "⚠️ No response generated."
+
+        # 🔒 Hard length cap for Telegram
+        reply = reply[:4000]
 
     except Exception as e:
         reply = f"⚠️ Error: {str(e)}"
