@@ -165,6 +165,23 @@ async def set_mode_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await update.message.reply_text("❌ Invalid mode. Available: TECHNICAL, EXECUTIVE, AUDIT, CLIENT")
 
 # ==============================
+# Reponse on start and reset
+# ==============================
+async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    await update.message.reply_text(
+        "👋 Hello! I am a multi-domain SME bot.\n\n"
+        "I automatically detect the domain of your query and respond accordingly.\n\n"
+        "Use /mode TECHNICAL | EXECUTIVE | AUDIT | CLIENT to change response style.\n"
+        "Use /reset to reset your session."
+    )
+async def reset_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    user_id = update.message.from_user.id
+
+    if user_id in user_sessions:
+        del user_sessions[user_id]
+
+    await update.message.reply_text("🔄 Session reset. Domain and mode cleared.")   
+# ==============================
 # Message Handler
 # ==============================
 async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -239,8 +256,11 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
 # ==============================
 def main():
     app = ApplicationBuilder().token(TELEGRAM_TOKEN).build()
-    
+
+    app.add_handler(CommandHandler("start", start_command))
+    app.add_handler(CommandHandler("reset", reset_command))
     app.add_handler(CommandHandler("mode", set_mode_command))
+
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_message))
 
     print("🤖 SME Telegram Bot running...")
