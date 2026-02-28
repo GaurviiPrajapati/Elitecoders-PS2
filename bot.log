@@ -1549,3 +1549,169 @@ Confidence score (0-100%): 98%
 2026-02-28 16:36:41,922 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
 2026-02-28 16:36:52,058 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
 2026-02-28 16:37:02,195 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 18:30:14,311 - ERROR - Network Retry Loop (Bootstrap Initialize Application): Failed run number 0 of 0. Aborting.
+Traceback (most recent call last):
+  File "C:\Python314\Lib\site-packages\telegram\request\_baserequest.py", line 305, in _request_wrapper
+    code, payload = await self.do_request(
+                    ^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Python314\Lib\site-packages\telegram\request\_httpxrequest.py", line 279, in do_request
+    res = await self._client.request(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Python314\Lib\site-packages\httpx\_client.py", line 1527, in request
+    request = self.build_request(
+        method=method,
+    ...<9 lines>...
+        extensions=extensions,
+    )
+  File "C:\Python314\Lib\site-packages\httpx\_client.py", line 366, in build_request
+    url = self._merge_url(url)
+  File "C:\Python314\Lib\site-packages\httpx\_client.py", line 396, in _merge_url
+    merge_url = URL(url)
+  File "C:\Python314\Lib\site-packages\httpx\_urls.py", line 117, in __init__
+    self._uri_reference = urlparse(url, **kwargs)
+                          ~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\site-packages\httpx\_urlparse.py", line 229, in urlparse
+    raise InvalidURL(error)
+httpx.InvalidURL: Invalid non-printable ASCII character in URL, '\n' at position 28.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Python314\Lib\site-packages\telegram\ext\_utils\networkloop.py", line 161, in network_retry_loop
+    await do_action()
+  File "C:\Python314\Lib\site-packages\telegram\ext\_utils\networkloop.py", line 136, in do_action
+    await action_cb()
+  File "C:\Python314\Lib\site-packages\telegram\ext\_application.py", line 489, in initialize
+    await self.bot.initialize()
+  File "C:\Python314\Lib\site-packages\telegram\ext\_extbot.py", line 315, in initialize
+    await super().initialize()
+  File "C:\Python314\Lib\site-packages\telegram\_bot.py", line 856, in initialize
+    await self.get_me()
+  File "C:\Python314\Lib\site-packages\telegram\ext\_extbot.py", line 2007, in get_me
+    return await super().get_me(
+           ^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "C:\Python314\Lib\site-packages\telegram\_bot.py", line 989, in get_me
+    result = await self._post(
+             ^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Python314\Lib\site-packages\telegram\_bot.py", line 703, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Python314\Lib\site-packages\telegram\ext\_extbot.py", line 369, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Python314\Lib\site-packages\telegram\_bot.py", line 732, in _do_post
+    result = await request.post(
+             ^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Python314\Lib\site-packages\telegram\request\_baserequest.py", line 198, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Python314\Lib\site-packages\telegram\request\_baserequest.py", line 317, in _request_wrapper
+    raise NetworkError(f"Unknown error in HTTP implementation: {exc!r}") from exc
+telegram.error.NetworkError: Unknown error in HTTP implementation: InvalidURL("Invalid non-printable ASCII character in URL, '\\n' at position 28.")
+2026-02-28 18:38:38,667 - ERROR - Network Retry Loop (Bootstrap Initialize Application): Failed run number 0 of 0. Aborting.
+Traceback (most recent call last):
+  File "C:\Python314\Lib\site-packages\telegram\request\_baserequest.py", line 305, in _request_wrapper
+    code, payload = await self.do_request(
+                    ^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Python314\Lib\site-packages\telegram\request\_httpxrequest.py", line 279, in do_request
+    res = await self._client.request(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Python314\Lib\site-packages\httpx\_client.py", line 1527, in request
+    request = self.build_request(
+        method=method,
+    ...<9 lines>...
+        extensions=extensions,
+    )
+  File "C:\Python314\Lib\site-packages\httpx\_client.py", line 366, in build_request
+    url = self._merge_url(url)
+  File "C:\Python314\Lib\site-packages\httpx\_client.py", line 396, in _merge_url
+    merge_url = URL(url)
+  File "C:\Python314\Lib\site-packages\httpx\_urls.py", line 117, in __init__
+    self._uri_reference = urlparse(url, **kwargs)
+                          ~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\site-packages\httpx\_urlparse.py", line 229, in urlparse
+    raise InvalidURL(error)
+httpx.InvalidURL: Invalid non-printable ASCII character in URL, '\n' at position 28.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Python314\Lib\site-packages\telegram\ext\_utils\networkloop.py", line 161, in network_retry_loop
+    await do_action()
+  File "C:\Python314\Lib\site-packages\telegram\ext\_utils\networkloop.py", line 136, in do_action
+    await action_cb()
+  File "C:\Python314\Lib\site-packages\telegram\ext\_application.py", line 489, in initialize
+    await self.bot.initialize()
+  File "C:\Python314\Lib\site-packages\telegram\ext\_extbot.py", line 315, in initialize
+    await super().initialize()
+  File "C:\Python314\Lib\site-packages\telegram\_bot.py", line 856, in initialize
+    await self.get_me()
+  File "C:\Python314\Lib\site-packages\telegram\ext\_extbot.py", line 2007, in get_me
+    return await super().get_me(
+           ^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "C:\Python314\Lib\site-packages\telegram\_bot.py", line 989, in get_me
+    result = await self._post(
+             ^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Python314\Lib\site-packages\telegram\_bot.py", line 703, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Python314\Lib\site-packages\telegram\ext\_extbot.py", line 369, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Python314\Lib\site-packages\telegram\_bot.py", line 732, in _do_post
+    result = await request.post(
+             ^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Python314\Lib\site-packages\telegram\request\_baserequest.py", line 198, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Python314\Lib\site-packages\telegram\request\_baserequest.py", line 317, in _request_wrapper
+    raise NetworkError(f"Unknown error in HTTP implementation: {exc!r}") from exc
+telegram.error.NetworkError: Unknown error in HTTP implementation: InvalidURL("Invalid non-printable ASCII character in URL, '\\n' at position 28.")

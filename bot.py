@@ -4,6 +4,7 @@ from telegram import Update
 from telegram.ext import (
     ApplicationBuilder,
     MessageHandler,
+    CommandHandler,
     filters,
     ContextTypes,
 )
@@ -94,6 +95,38 @@ User Query:
 
     return "general"
 # ==============================
+# Commands
+# ==============================
+async def set_mode_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    user_id = update.message.from_user.id
+    if not context.args:
+        await update.message.reply_text("Please specify a mode: TECHNICAL, EXECUTIVE, AUDIT, CLIENT")
+        return
+        
+    requested_mode = context.args[0].upper()
+    mode_map = {
+        "TECHNICAL": "TECHNICAL MODE",
+        "EXECUTIVE": "EXECUTIVE MODE",
+        "AUDIT": "AUDIT MODE", 
+        "CLIENT": "CLIENT SUMMARY MODE"
+    }
+    
+    if requested_mode in mode_map:
+        mode_full = mode_map[requested_mode]
+        if user_id not in user_sessions:
+            user_sessions[user_id] = {"domain": "general", "output_mode": "DEFAULT"}
+        
+        user_sessions[user_id]["output_mode"] = mode_full
+        
+        # Remove chat so it reinitializes with the new system prompt
+        if "chat" in user_sessions[user_id]:
+            del user_sessions[user_id]["chat"]
+            
+        await update.message.reply_text(f"✅ Output mode updated to: {mode_full}")
+    else:
+        await update.message.reply_text("❌ Invalid mode. Available: TECHNICAL, EXECUTIVE, AUDIT, CLIENT")
+
+# ==============================
 # Message Handler
 # ==============================
 async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -111,12 +144,24 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     try:
         detected_domain = classify_domain(user_text)
 
-        # Create new session if new user OR domain changed
-        if (
-            user_id not in user_sessions or
-            user_sessions[user_id]["domain"] != detected_domain
-        ):
+        # Create new session if new user OR domain changed / missing chat
+        if user_id not in user_sessions:
+            user_sessions[user_id] = {"domain": detected_domain, "output_mode": "DEFAULT"}
+            needs_new_chat = True
+        else:
+            needs_new_chat = (
+                user_sessions[user_id]["domain"] != detected_domain or
+                "chat" not in user_sessions[user_id]
+            )
+            if user_sessions[user_id]["domain"] != detected_domain:
+                user_sessions[user_id]["domain"] = detected_domain
+
+        if needs_new_chat:
             sme_engine.switch_domain(AVAILABLE_DOMAINS[detected_domain])
+
+            # Apply the user's output mode
+            current_mode = user_sessions[user_id].get("output_mode", "DEFAULT")
+            sme_engine.set_output_mode(current_mode)
 
             chat = client.chats.create(
                 model="gemini-2.5-flash"
@@ -125,10 +170,7 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
             system_prompt = sme_engine.build_system_prompt()
             chat.send_message(system_prompt)
 
-            user_sessions[user_id] = {
-                "chat": chat,
-                "domain": detected_domain
-            }
+            user_sessions[user_id]["chat"] = chat
 
         chat_session = user_sessions[user_id]["chat"]
 
@@ -152,6 +194,8 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
 # ==============================
 def main():
     app = ApplicationBuilder().token(TELEGRAM_TOKEN).build()
+    
+    app.add_handler(CommandHandler("mode", set_mode_command))
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_message))
 
     print("🤖 SME Telegram Bot running...")
