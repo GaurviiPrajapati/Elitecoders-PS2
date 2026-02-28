@@ -1,21 +1,9 @@
 # agent.py
 
 from langchain_google_genai import ChatGoogleGenerativeAI
-from langchain.agents import AgentExecutor, create_react_agent
-from langchain_core.prompts import ChatPromptTemplate
-from langchain_core.chat_history import InMemoryChatMessageHistory
-from langchain_core.runnables.history import RunnableWithMessageHistory
+from langchain.agents import create_agent
 from tools import WebSearchTool
 import os
-
-
-store = {}
-
-
-def get_session_history(session_id: str):
-    if session_id not in store:
-        store[session_id] = InMemoryChatMessageHistory()
-    return store[session_id]
 
 
 class AgentFactory:
@@ -28,34 +16,38 @@ class AgentFactory:
 
     def create_agent(self, system_prompt: str):
 
-        prompt = ChatPromptTemplate.from_messages([
-            ("system", system_prompt),
-            ("placeholder", "{history}"),
-            ("human", "{input}"),
-            ("placeholder", "{agent_scratchpad}")
-        ])
+        grounded_prompt = f"""
+        {system_prompt}
 
-        tools = [WebSearchTool]
+        GLOBAL RULES:
 
-        agent = create_react_agent(
-            llm=self.llm,
-            tools=tools,
-            prompt=prompt
-        )
+        TOOL USAGE RULES:
+        - Use WebSearchTool when:
+            * The query involves current events
+            * Regulations, laws, or compliance standards
+            * Financial or cybersecurity threats
+            * Time-sensitive information
+        - Do NOT answer from memory when real-time accuracy is required.
 
-        agent_executor = AgentExecutor(
-            agent=agent,
-            tools=tools,
-            verbose=False,
-            max_iterations=3,
-            handle_parsing_errors=True
-        )
+        CITATION RULES:
+        - If web search is used, you MUST cite the URLs provided.
+        - Never fabricate sources.
+        - Format citations as:
+        [Source: <URL>
+        ]
 
-        agent_with_memory = RunnableWithMessageHistory(
-            agent_executor,
-            get_session_history,
-            input_messages_key="input",
-            history_messages_key="history"
-        )
+        SAFETY RULES:
+        - If unsure, say: "Insufficient verified information."
+        - Never invent statistics, standards, or regulations.
+        - Never answer outside your defined domain.
+        - If query is outside scope, respond:
+        "This query is outside the current domain scope."
+        """
 
-        return agent_with_memory
+        agent = create_agent(
+        model=self.llm,
+        tools=[WebSearchTool],
+        system_prompt=grounded_prompt
+    )
+
+        return agent
