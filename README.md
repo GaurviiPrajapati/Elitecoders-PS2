@@ -1,89 +1,157 @@
-# SME Telegram Bot
+﻿# 🧠 Expertease
 
-A small Telegram bot that routes user queries to a domain-specific Subject Matter Expert (SME) prompt and interacts with Google's Gemini (Generative AI) via the `google.genai` client.
+![License](https://img.shields.io/badge/license-MIT-green) 
+![Python](https://img.shields.io/badge/python-3.10%2B-blue)
+![Telegram](https://img.shields.io/badge/telegram-bot-blue)
 
-**Files:**
-- [bot.py](bot.py) : Main Telegram bot entrypoint. Reads environment variables, classifies incoming messages into domains, creates/maintains chat sessions, and forwards messages to the Gemini chat session.
-- [sme_engine.py](sme_engine.py) : `SMEEngine` class for loading domain JSON files and building the system prompt used for each chat session.
-- `domains/` : Directory containing JSON domain descriptors (e.g., [domains/general.json](domains/general.json)).
+**Subject‑Matter‑Expert (SME) AI Assistant Suite**
 
-**Environment**
-- Python 3.10+ recommended.
-- Required environment variables:
-  - `TELEGRAM_TOKEN` — your Telegram Bot API token.
-  - `GEMINI_API_KEY` — API key for Google's Generative AI (Gemini) client.
+A polished web UI and Telegram bot that route user questions to domain‑specific SME prompts, powered by Google’s Gemini LLM. Built with Gemini CLI, LangChain, and a splash of Auto‑GPT.
 
-On Windows PowerShell you can set them for the session with:
+![Expertease UI](path/to/your/screenshot.png)
 
-```
-$env:TELEGRAM_TOKEN = "<your-telegram-token>"
-$env:GEMINI_API_KEY = "<your-gemini-api-key>"
-```
+---
 
-On Windows CMD:
+## 🚀 Features
 
-```
+- **Four expert domains**
+  - General, Cyber‑security, Financial advisory, Legal analyst
+- **Dual interface**
+  - Telegram chatbot
+  - Dedicated vanilla‑JS web UI (Expertease)
+- **Modular JSON domains** with persona, scope, decision trees, etc.
+- **Mode switching**: /mode TECHNICAL | EXECUTIVE | AUDIT | CLIENT
+- **Jailbreak/security filters** from security/governance_rules.json
+
+---
+
+## 🗂️ Repo Structure
+
+`
+agent.py
+bot.py              # Telegram bot entrypoint
+sme_engine.py       # builds system prompts
+tools.py
+
+domains/
+  general.json
+  cybersecurity.json
+  financial_advisor.json
+  legal_analyst.json
+
+logs/
+  bot.log
+
+security/
+  governance_rules.json
+
+ui/                 # frontend HTML/CSS/JS (if present)
+`
+
+---
+
+## 🛠️ Setup & Run
+
+### Requirements
+
+- Python 3.10+
+- Virtualenv or venv
+- Env vars: TELEGRAM_TOKEN, GEMINI_API_KEY
+
+Setting them:
+
+**PowerShell**
+`powershell
+ = "<your-telegram-token>"
+   = "<your-gemini-api-key>"
+`
+
+**CMD**
+`cmd
 set TELEGRAM_TOKEN=<your-telegram-token>
 set GEMINI_API_KEY=<your-gemini-api-key>
-```
+`
 
-**Install dependencies**
-- Create a virtual environment and install dependencies (example packages shown — adjust if you use different client libraries):
+### Install
 
-```
+`ash
 python -m venv .venv
-.\.venv\Scripts\activate
+.venv\Scripts\activate
 pip install python-telegram-bot google-genai
-```
+`
 
-Note: The project uses `google.genai` in `bot.py`. Ensure you have the appropriate Google Generative AI library installed and configured for your environment.
+### Run
 
-**Run**
-- Start the bot:
-
-```
+`ash
 python bot.py
-```
+`
 
-The bot logs to `bot.log` (created in the working directory).
+Access via Telegram or open the Expertease web UI (e.g., http://localhost:PORT).
 
-**How it works (high level)**
-- `bot.py` receives incoming Telegram text messages, uses an LLM prompt-based classifier to pick one of the domain JSONs in `domains/`, and then uses `SMEEngine` to build a system prompt for Gemini.
-- For each Telegram user the bot maintains a chat session (per-domain). If a user switches domains, a new chat session with updated system prompt is created.
+---
 
-**Domain JSON structure (example fields)**
-- `domain_name` — friendly name used in the system prompt.
-- `persona` — short persona description the model should adopt.
-- `scope` — array of topic strings describing what's in-scope.
-- `decision_tree` — optional list of decision steps to include in the system prompt.
-- `citation_rules` — optional object (e.g., `{ "required": true, "format": "..." }`).
-- `output_format` — optional object describing required output structure.
-- `out_of_scope_response` — message to return when queries are outside scope.
+## 🔍 How It Works
 
-**Output Personas / Modes**
-Users can customize the response style using the `/mode <MODE_NAME>` command. 
-Available modes are:
-- `TECHNICAL` — precise jargon, detailed, code/equations where applicable
-- `EXECUTIVE` — high-level summaries, ROI, strategic impact
-- `AUDIT` — objective focus on compliance, risks, and evidence
-- `CLIENT` — accessible language, benefits, and practical implications
+1. Incoming message → ot.py classifies domain via LLM prompt.
+2. SMEEngine loads JSON & constructs system prompt.
+3. Session maintained per user/domain; domain switch resets prompt.
+4. Gemini API generates response; bot returns it to user.
 
-For example, type `/mode EXECUTIVE` in the Telegram chat to switch to Executive mode.
+---
 
-To add or customize a domain, create a new JSON file under `domains/` following the same keys found in the existing files.
+## 📁 Domain JSON Example
 
-**Extending or customizing**
-- To change the classifier behavior, edit the `classify_domain` function in [bot.py](bot.py).
-- To change system prompt construction, edit `SMEEngine.build_system_prompt()` in [sme_engine.py](sme_engine.py).
-- To use a different Gemini/LLM model, update the model names used in `client.models.generate_content` and `client.chats.create` in `bot.py`.
+`json
+{
+  "domain_name": "Cyber‑Security",
+  "persona": "Seasoned infosec analyst",
+  "scope": ["vulnerabilities", "threat intel"],
+  "decision_tree": [...],
+  "citation_rules": { "required": true, "format": "APA" },
+  "output_format": { "type": "markdown" },
+  "out_of_scope_response": "I'm not able to answer that."
+}
+`
 
-**Troubleshooting**
-- If the bot immediately raises "Missing TELEGRAM_TOKEN or GEMINI_API_KEY", verify your environment variables are set.
-- Check `bot.log` for runtime errors and stack traces.
-- If domain classification seems wrong, inspect responses from the Gemini classifier call and refine the classification prompt.
+> Add new domains by creating a JSON file in domains/ using this schema.
 
-**Notes**
-- This repository contains only the bot logic and domain JSONs. Add appropriate dependency lists (e.g., `requirements.txt`) as desired.
+---
 
-**License**
-- Use or add a license file as appropriate for your project.
+## 🧩 Customization
+
+- Modify classify_domain() in ot.py.
+- Update SMEEngine.build_system_prompt() for prompt logic.
+- Swap LLM models in client.models.generate_content / client.chats.create.
+- Edit frontend in ui/ for UI tweaks.
+
+---
+
+## 🛡️ Security
+
+- Governance rules in security/governance_rules.json prevent jailbreaks.
+- All user input is screened before hitting Gemini.
+
+---
+
+## 📦 Notes
+
+- Backend logic & domains included; feel free to add equirements.txt, tests, CI.
+- Web UI (Expertease) is separate but bundled for showcase.
+
+---
+
+## 📜 License
+
+This project is licensed under the **MIT License**.  
+See [LICENSE](LICENSE) for details.
+
+---
+
+### 🎯 Hackathon Tips
+
+Demonstrate:
+- Slick UI vs Telegram interaction
+- Adding a domain in seconds
+- Mode switching & safe responses
+
+---
