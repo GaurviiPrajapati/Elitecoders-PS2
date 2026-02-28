@@ -10,7 +10,8 @@ from telegram.ext import (
     ContextTypes,
 )
 from telegram.constants import ChatAction
-from google import genai
+from langchain_google_genai import ChatGoogleGenerativeAI
+from langchain_core.messages import HumanMessage, SystemMessage
 from sme_engine import SMEEngine
 
 # ==============================
@@ -52,9 +53,12 @@ if not TELEGRAM_TOKEN or not GEMINI_API_KEY:
     raise ValueError("Missing TELEGRAM_TOKEN or GEMINI_API_KEY.")
 
 # ==============================
-# Gemini Client
+# LangChain LLM Client
 # ==============================
-client = genai.Client(api_key=GEMINI_API_KEY)
+llm = ChatGoogleGenerativeAI(
+    model="gemini-2.5-flash",
+    google_api_key=GEMINI_API_KEY
+)
 
 # ==============================
 # Domain Setup
@@ -119,12 +123,9 @@ User Query:
 {user_text}
 """
 
-    response = client.models.generate_content(
-        model="gemini-2.5-flash",
-        contents=classification_prompt
-    )
+    response = llm.invoke(classification_prompt)
 
-    raw_output = response.text.strip().lower()
+    raw_output = response.content.strip().lower()
 
     # Extract valid domain from response safely
     for key in AVAILABLE_DOMAINS.keys():
@@ -156,9 +157,9 @@ async def set_mode_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         
         user_sessions[user_id]["output_mode"] = mode_full
         
-        # Remove chat so it reinitializes with the new system prompt
-        if "chat" in user_sessions[user_id]:
-            del user_sessions[user_id]["chat"]
+        # Remove messages so it reinitializes with the new system prompt
+        if "messages" in user_sessions[user_id]:
+            del user_sessions[user_id]["messages"]
             
         await update.message.reply_text(f"✅ Output mode updated to: {mode_full}")
     else:
@@ -198,7 +199,7 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
         else:
             needs_new_chat = (
                 user_sessions[user_id]["domain"] != detected_domain or
-                "chat" not in user_sessions[user_id]
+                "messages" not in user_sessions[user_id]
             )
             if user_sessions[user_id]["domain"] != detected_domain:
                 user_sessions[user_id]["domain"] = detected_domain
@@ -210,20 +211,19 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
             current_mode = user_sessions[user_id].get("output_mode", "DEFAULT")
             sme_engine.set_output_mode(current_mode)
 
-            chat = client.chats.create(
-                model="gemini-2.5-flash"
-            )
-
             system_prompt = sme_engine.build_system_prompt()
-            chat.send_message(system_prompt)
+            
+            user_sessions[user_id]["messages"] = [
+                SystemMessage(content=system_prompt)
+            ]
 
-            user_sessions[user_id]["chat"] = chat
+        messages = user_sessions[user_id]["messages"]
+        messages.append(HumanMessage(content=user_text))
+        
+        response = llm.invoke(messages)
+        messages.append(response)
 
-        chat_session = user_sessions[user_id]["chat"]
-
-        response = chat_session.send_message(user_text)
-
-        reply = getattr(response, "text", None)
+        reply = getattr(response, "content", None)
         if not reply:
             reply = str(response)
 
