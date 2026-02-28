@@ -1,5 +1,6 @@
 import os
 import logging
+import json
 from telegram import Update
 from telegram.ext import (
     ApplicationBuilder,
@@ -20,6 +21,26 @@ logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s - %(levelname)s - %(message)s"
 )
+
+# ==============================
+# Governance Rules for Anti-Jailbreak Protection
+# ==============================
+def load_governance_rules():
+    """Load governance rules from security/governance_rules.json"""
+    try:
+        with open("security/governance_rules.json", "r") as f:
+            return json.load(f)
+    except Exception as e:
+        logging.error(f"Failed to load governance rules: {str(e)}")
+        return {
+            "override_triggers": [],
+            "response_message": "🛡 Governance Override Attempt Detected.\nRequest denied.",
+            "log_severity": "HIGH"
+        }
+
+governance_rules = load_governance_rules()
+OVERRIDE_TRIGGERS = governance_rules.get("override_triggers", [])
+GOVERNANCE_RESPONSE = governance_rules.get("response_message", "🛡 Governance Override Attempt Detected.\nRequest denied.")
 
 # ==============================
 # Environment Variables
@@ -55,6 +76,23 @@ sme_engine = SMEEngine("domains/general.json")
 user_sessions = {}
 
 MAX_LENGTH = 4000
+
+# ==============================
+# Anti-Jailbreak Protection
+# ==============================
+def check_override_attempt(user_text):
+    """
+    Check if user is attempting to override or jailbreak the governance.
+    
+    Returns: (is_override, trigger_found)
+    """
+    user_text_lower = user_text.lower()
+    
+    for trigger in OVERRIDE_TRIGGERS:
+        if trigger.lower() in user_text_lower:
+            return True, trigger
+    
+    return False, None
 
 # ==============================
 # Domain Classifier
@@ -134,6 +172,15 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user_text = update.message.text
 
     logging.info(f"User {user_id}: {user_text}")
+
+    # ==============================
+    # Check for Override/Jailbreak Attempts
+    # ==============================
+    is_override, trigger = check_override_attempt(user_text)
+    if is_override:
+        logging.warning(f"🚨 SECURITY ALERT: User {user_id} attempted override with trigger: '{trigger}'")
+        await update.message.reply_text(GOVERNANCE_RESPONSE)
+        return
 
     await context.bot.send_chat_action(
         chat_id=update.effective_chat.id,
