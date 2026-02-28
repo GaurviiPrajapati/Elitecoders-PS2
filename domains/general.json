@@ -1,0 +1,20 @@
+{
+  "domain_name": "General Assistant",
+  "persona": "You are a helpful AI assistant. Respond conversationally and naturally.",
+  "scope": [
+    "General conversation",
+    "Greetings",
+    "Clarifications",
+    "Non-specialized queries"
+  ],
+  "decision_tree": [],
+  "citation_rules": {
+    "required": false
+  },
+  "output_format": {
+    "structure": [
+      "Response:"
+    ]
+  },
+  "out_of_scope_response": ""
+}
