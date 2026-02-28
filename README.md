@@ -60,6 +60,16 @@ The bot logs to `bot.log` (created in the working directory).
 - `output_format` — optional object describing required output structure.
 - `out_of_scope_response` — message to return when queries are outside scope.
 
+**Output Personas / Modes**
+Users can customize the response style using the `/mode <MODE_NAME>` command. 
+Available modes are:
+- `TECHNICAL` — precise jargon, detailed, code/equations where applicable
+- `EXECUTIVE` — high-level summaries, ROI, strategic impact
+- `AUDIT` — objective focus on compliance, risks, and evidence
+- `CLIENT` — accessible language, benefits, and practical implications
+
+For example, type `/mode EXECUTIVE` in the Telegram chat to switch to Executive mode.
+
 To add or customize a domain, create a new JSON file under `domains/` following the same keys found in the existing files.
 
 **Extending or customizing**

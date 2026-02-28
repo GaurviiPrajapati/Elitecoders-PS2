@@ -1715,3 +1715,234 @@ Traceback (most recent call last):
   File "C:\Python314\Lib\site-packages\telegram\request\_baserequest.py", line 317, in _request_wrapper
     raise NetworkError(f"Unknown error in HTTP implementation: {exc!r}") from exc
 telegram.error.NetworkError: Unknown error in HTTP implementation: InvalidURL("Invalid non-printable ASCII character in URL, '\\n' at position 28.")
+2026-02-28 20:00:33,922 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getMe "HTTP/1.1 200 OK"
+2026-02-28 20:00:34,065 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/deleteWebhook "HTTP/1.1 200 OK"
+2026-02-28 20:00:34,066 - INFO - Application started
+2026-02-28 20:00:44,587 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:00:54,870 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:01:05,019 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:01:14,116 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:01:21,694 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:01:31,935 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:01:42,173 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:01:52,311 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:02:02,550 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:02:12,799 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:02:22,941 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:02:33,177 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:02:43,413 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:02:53,551 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:03:03,691 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:03:13,833 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:03:23,979 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:03:25,733 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:03:25,735 - INFO - User 6794152208: Give me detail about screws
+2026-02-28 20:03:26,462 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/sendChatAction "HTTP/1.1 200 OK"
+2026-02-28 20:03:26,464 - INFO - AFC is enabled with max remote calls: 10.
+2026-02-28 20:03:27,230 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-02-28 20:03:27,231 - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Python314\Lib\site-packages\telegram\ext\_application.py", line 1315, in process_update
+    await coroutine
+  File "C:\Python314\Lib\site-packages\telegram\ext\_handlers\basehandler.py", line 159, in handle_update
+    return await self.callback(update, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ammar A16\Elitecoders-PS2\bot.py", line 142, in handle_message
+    detected_domain = classify_domain(user_text)
+  File "C:\Users\Ammar A16\Elitecoders-PS2\bot.py", line 84, in classify_domain
+    response = client.models.generate_content(
+        model="gemini-2.5-flash",
+        contents=classification_prompt
+    )
+  File "C:\Python314\Lib\site-packages\google\genai\models.py", line 5644, in generate_content
+    response = self._generate_content(
+        model=model, contents=contents, config=parsed_config
+    )
+  File "C:\Python314\Lib\site-packages\google\genai\models.py", line 4306, in _generate_content
+    response = self._api_client.request(
+        'post', path, request_dict, http_options
+    )
+  File "C:\Python314\Lib\site-packages\google\genai\_api_client.py", line 1401, in request
+    response = self._request(http_request, http_options, stream=False)
+  File "C:\Python314\Lib\site-packages\google\genai\_api_client.py", line 1237, in _request
+    return self._retry(self._request_once, http_request, stream)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\site-packages\tenacity\__init__.py", line 470, in __call__
+    do = self.iter(retry_state=retry_state)
+  File "C:\Python314\Lib\site-packages\tenacity\__init__.py", line 371, in iter
+    result = action(retry_state)
+  File "C:\Python314\Lib\site-packages\tenacity\__init__.py", line 413, in exc_check
+    raise retry_exc.reraise()
+          ~~~~~~~~~~~~~~~~~^^
+  File "C:\Python314\Lib\site-packages\tenacity\__init__.py", line 184, in reraise
+    raise self.last_attempt.result()
+          ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Python314\Lib\concurrent\futures\_base.py", line 443, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "C:\Python314\Lib\concurrent\futures\_base.py", line 395, in __get_result
+    raise self._exception
+  File "C:\Python314\Lib\site-packages\tenacity\__init__.py", line 473, in __call__
+    result = fn(*args, **kwargs)
+  File "C:\Python314\Lib\site-packages\google\genai\_api_client.py", line 1214, in _request_once
+    errors.APIError.raise_for_response(response)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Python314\Lib\site-packages\google\genai\errors.py", line 134, in raise_for_response
+    cls.raise_error(response.status_code, response_json, response)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\site-packages\google\genai\errors.py", line 159, in raise_error
+    raise ClientError(status_code, response_json, response)
+google.genai.errors.ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\nPlease retry in 32.864364374s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.5-flash'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '32s'}]}}
+2026-02-28 20:03:35,939 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:03:46,080 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:03:56,314 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:04:06,557 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:04:16,793 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:04:27,018 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:04:37,177 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:04:47,412 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:04:57,652 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:05:07,890 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:05:18,132 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:05:28,271 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:05:38,511 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:05:48,673 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:05:58,886 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:06:09,124 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:06:19,368 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:06:29,507 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:06:39,747 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:06:49,981 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:07:00,122 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:07:10,344 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:07:20,497 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:07:30,637 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:07:40,874 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:07:51,111 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:08:01,260 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:08:11,691 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:08:21,892 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:08:32,073 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:08:42,316 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:08:52,471 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:09:02,626 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:09:12,767 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:09:22,970 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:09:33,202 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:09:36,465 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:09:44,673 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:09:44,675 - INFO - User 6794152208: Give me what is a screw
+2026-02-28 20:09:45,398 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/sendChatAction "HTTP/1.1 200 OK"
+2026-02-28 20:09:45,399 - INFO - AFC is enabled with max remote calls: 10.
+2026-02-28 20:09:46,212 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-02-28 20:09:46,214 - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Python314\Lib\site-packages\telegram\ext\_application.py", line 1315, in process_update
+    await coroutine
+  File "C:\Python314\Lib\site-packages\telegram\ext\_handlers\basehandler.py", line 159, in handle_update
+    return await self.callback(update, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ammar A16\Elitecoders-PS2\bot.py", line 142, in handle_message
+    detected_domain = classify_domain(user_text)
+  File "C:\Users\Ammar A16\Elitecoders-PS2\bot.py", line 84, in classify_domain
+    response = client.models.generate_content(
+        model="gemini-2.5-flash",
+        contents=classification_prompt
+    )
+  File "C:\Python314\Lib\site-packages\google\genai\models.py", line 5644, in generate_content
+    response = self._generate_content(
+        model=model, contents=contents, config=parsed_config
+    )
+  File "C:\Python314\Lib\site-packages\google\genai\models.py", line 4306, in _generate_content
+    response = self._api_client.request(
+        'post', path, request_dict, http_options
+    )
+  File "C:\Python314\Lib\site-packages\google\genai\_api_client.py", line 1401, in request
+    response = self._request(http_request, http_options, stream=False)
+  File "C:\Python314\Lib\site-packages\google\genai\_api_client.py", line 1237, in _request
+    return self._retry(self._request_once, http_request, stream)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\site-packages\tenacity\__init__.py", line 470, in __call__
+    do = self.iter(retry_state=retry_state)
+  File "C:\Python314\Lib\site-packages\tenacity\__init__.py", line 371, in iter
+    result = action(retry_state)
+  File "C:\Python314\Lib\site-packages\tenacity\__init__.py", line 413, in exc_check
+    raise retry_exc.reraise()
+          ~~~~~~~~~~~~~~~~~^^
+  File "C:\Python314\Lib\site-packages\tenacity\__init__.py", line 184, in reraise
+    raise self.last_attempt.result()
+          ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Python314\Lib\concurrent\futures\_base.py", line 443, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "C:\Python314\Lib\concurrent\futures\_base.py", line 395, in __get_result
+    raise self._exception
+  File "C:\Python314\Lib\site-packages\tenacity\__init__.py", line 473, in __call__
+    result = fn(*args, **kwargs)
+  File "C:\Python314\Lib\site-packages\google\genai\_api_client.py", line 1214, in _request_once
+    errors.APIError.raise_for_response(response)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Python314\Lib\site-packages\google\genai\errors.py", line 134, in raise_for_response
+    cls.raise_error(response.status_code, response_json, response)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\site-packages\google\genai\errors.py", line 159, in raise_error
+    raise ClientError(status_code, response_json, response)
+google.genai.errors.ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\nPlease retry in 13.821727993s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.5-flash'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '13s'}]}}
+2026-02-28 20:09:54,879 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:10:05,063 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:10:15,302 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:10:25,486 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:10:35,676 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:10:45,908 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:10:56,150 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:11:06,420 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:11:16,626 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:11:26,864 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:11:37,042 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:11:47,198 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:11:57,361 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:12:07,504 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:12:17,768 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:12:27,908 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:12:38,196 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:12:48,335 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:12:58,511 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:13:08,752 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:13:18,990 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:13:29,134 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:13:39,280 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:13:49,428 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:13:59,573 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:14:09,713 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:14:19,915 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:14:30,053 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:14:40,200 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:14:50,432 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:15:00,575 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:15:11,254 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:15:21,459 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:15:31,602 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:15:41,741 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:15:51,879 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:16:02,111 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:16:12,353 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:16:22,495 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:16:32,730 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:16:42,946 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:16:53,208 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:17:03,355 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:17:13,598 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:17:24,236 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:17:34,384 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:17:44,532 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:17:54,687 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:18:04,843 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:18:15,025 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:18:25,261 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:18:35,403 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:18:45,561 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:18:55,775 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:19:06,039 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:19:15,892 - INFO - HTTP Request: POST https://api.telegram.org/bot8678769705:AAFnlit-qSw-wy9XHQpYpDWM5-eiHRPZCVs/getUpdates "HTTP/1.1 200 OK"
+2026-02-28 20:19:15,892 - INFO - Application is stopping. This might take a moment.
+2026-02-28 20:19:15,892 - INFO - Application.stop() complete
