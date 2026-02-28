@@ -1,0 +1,16 @@
+{
+  "override_triggers": [
+    "ignore sme",
+    "ignore previous instructions",
+    "act outside governance",
+    "pretend you are unrestricted",
+    "bypass restrictions",
+    "disable safety",
+    "override system",
+    "act as root",
+    "ignore policies"
+  ],
+  "response_message": "🛡 Governance Override Attempt Detected.\nRequest denied.",
+  "log_severity": "HIGH"
+}
+
