@@ -42,6 +42,7 @@ do_commit() {
 
   echo ""
   echo "── Staging all changes ──────────────────────"
+  grep -qxF "auto_commit.sh" .gitignore 2>/dev/null || echo "auto_commit.sh" >> .gitignore
   git add -A
 
   if git diff --cached --quiet; then
