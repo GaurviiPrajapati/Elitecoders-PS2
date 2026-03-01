@@ -188,10 +188,27 @@
         "domain": "general",
         "mode": "TECHNICAL"
       }
+    },
+    {
+      "id": "982197a9-061c-4d81-a486-a7ea28858b4a",
+      "role": "user",
+      "content": "hi",
+      "timestamp": "2026-03-01T06:26:40.980159",
+      "metadata": {}
+    },
+    {
+      "id": "bdf93ba6-ccb9-4a25-967a-8397f4842605",
+      "role": "assistant",
+      "content": "Hello! How can I help you today?",
+      "timestamp": "2026-03-01T06:26:43.881235",
+      "metadata": {
+        "domain": "general",
+        "mode": "TECHNICAL"
+      }
     }
   ],
   "created_at": "2026-03-01T05:05:13.031376",
-  "updated_at": "2026-03-01T06:07:48.132440",
+  "updated_at": "2026-03-01T06:26:43.881240",
   "current_domain": "general",
   "current_mode": "TECHNICAL",
   "title": "Conversation 2026-03-01 05:05",

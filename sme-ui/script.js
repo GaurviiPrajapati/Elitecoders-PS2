@@ -137,6 +137,10 @@ document.addEventListener('DOMContentLoaded', () => {
             window.history.replaceState({}, '', `chat.html?chatId=${currentChatId}`);
         }
     }
+    if (!currentChatId || currentChatId === "undefined" || currentChatId === "null") {
+        currentChatId = Date.now().toString();
+        localStorage.setItem('expertEaseCurrentChatId', currentChatId);
+    }
 
     async function loadRecentChats() {
         const token = localStorage.getItem('expertEaseToken');
@@ -146,6 +150,11 @@ document.addEventListener('DOMContentLoaded', () => {
             const res = await fetch(`${API_BASE_URL}/chat-sessions`, {
                 headers: { 'Authorization': `Bearer ${token}` }
             });
+            if (res.status === 403) {
+                localStorage.removeItem('expertEaseToken');
+                window.location.replace('login.html');
+                return;
+            }
             if (res.ok) {
                 const sessions = await res.json();
                 const container = document.getElementById('recent-chats-container');
@@ -189,6 +198,13 @@ document.addEventListener('DOMContentLoaded', () => {
             const res = await fetch(`${API_BASE_URL}/chats/${currentChatId}`, {
                 headers: { 'Authorization': `Bearer ${token}` }
             });
+
+            if (res.status === 403) {
+                console.warn("Unauthorized. Redirecting to login.");
+                localStorage.removeItem('expertEaseToken');
+                window.location.replace('login.html');
+                return;
+            }
             if (res.ok) {
                 const messages = await res.json();
                 messages.forEach(msg => {
@@ -376,6 +392,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const token = localStorage.getItem('expertEaseToken');
             try {
                 const res = await fetch(`${API_BASE_URL}/generate`, {
+                    
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -383,6 +400,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     },
                     body: JSON.stringify({ chatId: currentChatId, message: text })
                 });
+                if (res.status === 403) {
+                    localStorage.removeItem('expertEaseToken');
+                    window.location.replace('login.html');
+                    return;
+                }
 
                 // remove thinking bubble
                 thinkingDiv.remove();
