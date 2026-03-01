@@ -28,37 +28,40 @@ A polished web UI and Telegram bot that route user questions to domain-specific 
 
 ---
 
-## 🗂️ Repository Structure
 
-Elitecoders-PS2/
+## 📁 Repository Structure
+
+```
+Elitecoders-PS2
 │
-├── .run/                      # Runtime configs / IDE run configurations
+├── .run/                        
 │
-├── AI_Backend/                # Core AI logic (LangChain, AutoGPT, domain logic)
+├── AI_Backend/                  
 │
-├── backend_server/            # Backend server implementation
+├── backend_server/              
 │
-├── conversations/             # Stored conversation logs / memory
+├── conversations/               
 │
-├── sme_env/                   # SME environment configurations
+├── sme_env/                     
 │
-├── sme-ui/                    # Frontend (HTML, CSS, JS)
-│   ├── auth.js                # Authentication logic
-│   ├── chat.html              # Chat interface
-│   ├── index.html             # Landing page
-│   ├── login.html             # Login page
-│   ├── logo.png               # Project logo
-│   ├── script.js              # Frontend interaction logic
-│   └── style.css              # Styling
+├── sme-ui/                      
+│   ├── auth.js                  
+│   ├── chat.html                
+│   ├── index.html               
+│   ├── login.html               
+│   ├── logo.png                 
+│   ├── script.js                
+│   └── style.css                
 │
-├── .gitignore                 # Git ignored files
-├── bot.log                    # Runtime logs
-├── LICENSE                    # Project license
-├── README.md                  # Project documentation
-├── run_all.ps1                # PowerShell script to run full system
-├── run_server.ps1             # PowerShell script to run backend
-├── server.pid                 # Server process ID
-└── test_bot.py                # Bot testing script
+├── .gitignore                   
+├── bot.log                      
+├── LICENSE                      
+├── README.md                    
+├── run_all.ps1                  
+├── run_server.ps1               
+├── server.pid                   
+└── test_bot.py                  
+```
 
 ## 🛠️ Setup & Run
 
