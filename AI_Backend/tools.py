@@ -1,14 +1,19 @@
 # tools.py
 
+# load dotenv to ensure API keys are available during import
+from dotenv import load_dotenv, find_dotenv
+load_dotenv(find_dotenv())
+
 from langchain_core.tools import tool
 from tavily import TavilyClient
 import os
 import json
 
-TAVILY_API_KEY = os.getenv("TAVILY_API_KEY")
+TAVILY_API_KEY = os.getenv("TAVILY_API_KEY", "")
 
 if not TAVILY_API_KEY:
-    raise ValueError("Missing TAVILY_API_KEY")
+    # don't crash; tool will simply be non-functional
+    print("[warning] TAVILY_API_KEY not configured; WebSearchTool disabled.")
 
 tavily = TavilyClient(api_key=TAVILY_API_KEY)
 

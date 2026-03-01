@@ -293,7 +293,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 10);
     }
 
-    function handleSend() {
+    async function handleSend() {
         const text = chatInput.value;
         if (text) {
             // Hide intro content when first message is sent
@@ -326,17 +326,36 @@ document.addEventListener('DOMContentLoaded', () => {
                 chatMessages.scrollTop = chatMessages.scrollHeight;
             }, 10);
 
-            // Simulate bot response
-            setTimeout(() => {
-                thinkingDiv.style.opacity = '0';
-                thinkingDiv.style.transform = 'translateY(10px)';
-                setTimeout(() => {
-                    thinkingDiv.remove();
-                    const botReply = 'Processed by ExpertEASE Governance Layer. Reasoning recorded. Proceeding with safe output.';
+            // Call backend to generate real bot reply
+            const token = localStorage.getItem('expertEaseToken');
+            try {
+                const res = await fetch(`${API_BASE_URL}/generate`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': token ? `Bearer ${token}` : ''
+                    },
+                    body: JSON.stringify({ chatId: currentChatId, message: text })
+                });
+
+                // remove thinking bubble
+                thinkingDiv.remove();
+
+                if (res.ok) {
+                    const data = await res.json();
+                    const botReply = data.reply || 'No reply from server.';
                     addMessage(botReply, 'bot');
-                    saveMessageToDB('bot', botReply);
-                }, 300);
-            }, 1800);
+                    // backend already persists bot message, but keep local copy call for UI
+                    try { saveMessageToDB('bot', botReply); } catch (e) { /* ignore */ }
+                } else {
+                    const errText = await res.text();
+                    addMessage(`Error: ${errText}`, 'bot');
+                }
+            } catch (err) {
+                thinkingDiv.remove();
+                addMessage('Error contacting server.', 'bot');
+                console.error('Generate API error', err);
+            }
         }
     }
 

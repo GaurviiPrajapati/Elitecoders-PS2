@@ -2,7 +2,7 @@
 
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain.agents import create_agent
-from tools import WebSearchTool
+from .tools import WebSearchTool
 import os
 
 

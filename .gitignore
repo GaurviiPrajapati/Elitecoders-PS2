@@ -1,6 +1,19 @@
-<<<<<<< HEAD
+# Generated ignore rules for project
 
-=======
-auto_commit.sh
-.gitignore
->>>>>>> f9263e00b2e15127e27dba9c5d80398a44bf2198
+# virtual environments
+sme_env/
+.venv/
+
+# Node modules
+backend_server/node_modules/
+
+# Environment variable files
+.env
+
+# logs
+AI_Backend/bot.log
+
+# others
+*.pyc
+__pycache__/
+

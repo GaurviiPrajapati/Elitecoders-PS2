@@ -1,3 +1,6 @@
+// load .env variables
+require('dotenv').config();
+
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
@@ -162,6 +165,61 @@ app.post('/api/chats', authenticateToken, async (req, res) => {
     res.status(201).json(newMessage);
   } catch (error) {
     res.status(500).json({ message: 'Server error saving message' });
+  }
+});
+
+// 7. API Route: POST /api/generate (Proxy to Python AI service and persist bot reply)
+// This endpoint is intentionally open so the web UI can function without login.
+app.post('/api/generate', async (req, res) => {
+  try {
+    const { chatId, message } = req.body;
+
+    if (!chatId || !message) {
+      return res.status(400).json({ message: 'chatId and message are required' });
+    }
+
+    // determine userId if token present
+    let userId = null;
+    const authHeader = req.headers['authorization'];
+    const token = authHeader && authHeader.split(' ')[1];
+    if (token) {
+      try {
+        const verified = jwt.verify(token, JWT_SECRET);
+        userId = verified.userId;
+      } catch (e) {
+        // ignore invalid token
+      }
+    }
+
+    // Call local Python AI service
+    const pythonRes = await fetch('http://localhost:8000/generate', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ message })
+    });
+
+    if (!pythonRes.ok) {
+      const errText = await pythonRes.text();
+      return res.status(502).json({ message: 'AI service error', detail: errText });
+    }
+
+    const gen = await pythonRes.json();
+    const botContent = gen.reply || 'No reply from AI service';
+
+    // Save bot message to MongoDB if we have a user
+    if (userId) {
+      const botMessage = new Message({
+        userId,
+        chatId,
+        role: 'bot',
+        content: botContent
+      });
+      await botMessage.save();
+    }
+
+    res.status(200).json({ reply: botContent });
+  } catch (error) {
+    res.status(500).json({ message: 'Server error generating message', error: error.message });
   }
 });
 
