@@ -118,8 +118,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const sendBtn = document.getElementById('send-btn');
     const chatMessages = document.getElementById('chat-messages');
     const chatAnchor = document.getElementById('chat-anchor');
-    // API Endpoints
-    const API_BASE_URL = 'http://localhost:5000/api';
+    // API Endpoints (updated to match Python backend port)
+    const API_BASE_URL = 'http://localhost:8000/api';
 
     // Figure out the current Chat ID
     let currentChatId = null;
@@ -293,9 +293,47 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 10);
     }
 
+    // typewriter effect for bot replies
+    function showBotReply(reply) {
+        if (!reply) return;
+        const msgDiv = document.createElement('div');
+        msgDiv.classList.add('message', 'bot');
+        msgDiv.textContent = '';
+
+        // prep animation
+        msgDiv.style.opacity = '0';
+        msgDiv.style.transform = 'translateY(10px)';
+        msgDiv.style.transition = 'all 0.3s ease-out';
+
+        chatMessages.insertBefore(msgDiv, chatAnchor);
+
+        setTimeout(() => {
+            msgDiv.style.opacity = '1';
+            msgDiv.style.transform = 'translateY(0)';
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+            typeWriter(msgDiv, reply, 20);
+        }, 10);
+    }
+
+    function typeWriter(element, text, delay = 30) {
+        let i = 0;
+        function step() {
+            if (i < text.length) {
+                element.textContent += text.charAt(i++);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+                setTimeout(step, delay);
+            }
+        }
+        step();
+    }
+
     async function handleSend() {
         const text = chatInput.value;
         if (text) {
+            // disable input while waiting
+            sendBtn.disabled = true;
+            chatInput.disabled = true;
+
             // Hide intro content when first message is sent
             const pageContent = document.getElementById('page-content');
             if (pageContent && !pageContent.classList.contains('ui-hidden')) {
@@ -344,17 +382,21 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (res.ok) {
                     const data = await res.json();
                     const botReply = data.reply || 'No reply from server.';
-                    addMessage(botReply, 'bot');
+                    showBotReply(botReply);
                     // backend already persists bot message, but keep local copy call for UI
                     try { saveMessageToDB('bot', botReply); } catch (e) { /* ignore */ }
                 } else {
                     const errText = await res.text();
-                    addMessage(`Error: ${errText}`, 'bot');
+                    showBotReply(`Error: ${errText}`);
                 }
             } catch (err) {
                 thinkingDiv.remove();
-                addMessage('Error contacting server.', 'bot');
+                showBotReply('Error contacting server.');
                 console.error('Generate API error', err);
+            } finally {
+                // re-enable input
+                sendBtn.disabled = false;
+                chatInput.disabled = false;
             }
         }
     }

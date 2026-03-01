@@ -4,6 +4,7 @@ import os
 
 load_dotenv(find_dotenv())
 
+from fastapi.middleware.cors import CORSMiddleware
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 from typing import Optional
@@ -12,6 +13,14 @@ import uvicorn
 
 
 app = FastAPI(title="SME Web UI API", version="1.0.0")
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # for development
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 
 # ============================================================================

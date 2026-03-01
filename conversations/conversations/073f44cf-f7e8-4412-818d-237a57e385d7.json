@@ -1,0 +1,29 @@
+{
+  "session_id": "073f44cf-f7e8-4412-818d-237a57e385d7",
+  "user_id": "user1",
+  "messages": [
+    {
+      "id": "2126edf7-7a07-4a39-831f-9e6ea34b1bc8",
+      "role": "user",
+      "content": "hello",
+      "timestamp": "2026-03-01T04:21:28.884611",
+      "metadata": {}
+    },
+    {
+      "id": "968878d0-6a8c-4422-bde5-fdc99efcfece",
+      "role": "assistant",
+      "content": "Hello there! How can I help you today?",
+      "timestamp": "2026-03-01T04:21:31.866804",
+      "metadata": {
+        "domain": "general",
+        "mode": "TECHNICAL"
+      }
+    }
+  ],
+  "created_at": "2026-03-01T04:21:28.881728",
+  "updated_at": "2026-03-01T04:21:31.866810",
+  "current_domain": "general",
+  "current_mode": "TECHNICAL",
+  "title": "Conversation 2026-03-01 04:21",
+  "archived": false
+}
