@@ -11,14 +11,23 @@
   },
   "user1": {
     "user_id": "user1",
-    "active_session_id": "073f44cf-f7e8-4412-818d-237a57e385d7",
+    "active_session_id": "010c9994-f227-4e7d-b00d-5566ecd09c51",
     "conversation_history": [
       "8bdaa53c-9c44-480f-a589-8026ebe2e864",
-      "010c9994-f227-4e7d-b00d-5566ecd09c51",
-      "073f44cf-f7e8-4412-818d-237a57e385d7"
+      "010c9994-f227-4e7d-b00d-5566ecd09c51"
     ],
     "user_preferences": {},
     "created_at": "2026-03-01T03:13:43.708280",
     "last_activity": "2026-03-01T03:13:43.708287"
+  },
+  "legacy_user": {
+    "user_id": "legacy_user",
+    "active_session_id": "706dc6f4-9c52-428e-922d-3dbf4eba7b19",
+    "conversation_history": [
+      "706dc6f4-9c52-428e-922d-3dbf4eba7b19"
+    ],
+    "user_preferences": {},
+    "created_at": "2026-03-01T05:05:13.031710",
+    "last_activity": "2026-03-01T05:05:13.031724"
   }
 }

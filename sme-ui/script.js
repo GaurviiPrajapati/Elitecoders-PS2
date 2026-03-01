@@ -40,9 +40,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // Sidebar logic
     const sidebarToggle = document.getElementById('sidebar-toggle');
 
-    sidebarToggle.addEventListener('click', () => {
-        sidebar.classList.toggle('collapsed');
-    });
+    if (sidebarToggle && sidebar) {
+        sidebarToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('collapsed');
+        });
+    }
 
     // New Chat logic
     const newChatBtn = document.getElementById('new-chat-btn');
@@ -119,7 +121,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const chatMessages = document.getElementById('chat-messages');
     const chatAnchor = document.getElementById('chat-anchor');
     // API Endpoints (updated to match Python backend port)
-    const API_BASE_URL = 'http://localhost:8000/api';
+    const API_BASE_URL = 'http://localhost:5000/api';
 
     // Figure out the current Chat ID
     let currentChatId = null;
@@ -196,7 +198,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     msgDiv.style.opacity = '1';
                     msgDiv.style.transform = 'translateY(0)';
 
-                    chatMessages.insertBefore(msgDiv, chatAnchor);
+                    chatMessages.appendChild(msgDiv);
                 });
                 if (messages.length > 0) {
                     chatMessages.scrollTop = chatMessages.scrollHeight;
@@ -273,45 +275,48 @@ document.addEventListener('DOMContentLoaded', () => {
     loadRecentChats();
 
     function addMessage(text, sender) {
-        if (!text.trim()) return;
+        if (!text || !text.trim()) return;
+        if (!chatMessages) return;
 
         const msgDiv = document.createElement('div');
         msgDiv.classList.add('message', sender);
-        msgDiv.textContent = text;
+        msgDiv.innerHTML = marked.parse(text);
 
-        // Intro animation
+        // Initial animation state
         msgDiv.style.opacity = '0';
         msgDiv.style.transform = 'translateY(10px)';
         msgDiv.style.transition = 'all 0.3s ease-out';
 
-        chatMessages.insertBefore(msgDiv, chatAnchor);
+        // Just append normally (no anchor drama)
+        chatMessages.appendChild(msgDiv);
 
+        // Trigger animation
         setTimeout(() => {
             msgDiv.style.opacity = '1';
             msgDiv.style.transform = 'translateY(0)';
             chatMessages.scrollTop = chatMessages.scrollHeight;
         }, 10);
     }
-
     // typewriter effect for bot replies
     function showBotReply(reply) {
-        if (!reply) return;
+        if (!reply || !chatMessages) return;
+
         const msgDiv = document.createElement('div');
         msgDiv.classList.add('message', 'bot');
-        msgDiv.textContent = '';
 
-        // prep animation
+        // Render full markdown immediately
+        msgDiv.innerHTML = marked.parse(reply);
+
         msgDiv.style.opacity = '0';
         msgDiv.style.transform = 'translateY(10px)';
         msgDiv.style.transition = 'all 0.3s ease-out';
 
-        chatMessages.insertBefore(msgDiv, chatAnchor);
+        chatMessages.appendChild(msgDiv);
 
         setTimeout(() => {
             msgDiv.style.opacity = '1';
             msgDiv.style.transform = 'translateY(0)';
             chatMessages.scrollTop = chatMessages.scrollHeight;
-            typeWriter(msgDiv, reply, 20);
         }, 10);
     }
 
@@ -328,7 +333,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     async function handleSend() {
+        if (!chatInput || !chatMessages || !sendBtn) return;
+        
         const text = chatInput.value;
+        if (!text || !text.trim()) return;
         if (text) {
             // disable input while waiting
             sendBtn.disabled = true;
@@ -356,7 +364,7 @@ document.addEventListener('DOMContentLoaded', () => {
             thinkingDiv.style.transform = 'translateY(10px)';
             thinkingDiv.style.transition = 'all 0.3s ease-out';
 
-            chatMessages.insertBefore(thinkingDiv, chatAnchor);
+            chatMessages.appendChild(thinkingDiv);
 
             setTimeout(() => {
                 thinkingDiv.style.opacity = '1';
@@ -384,7 +392,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     const botReply = data.reply || 'No reply from server.';
                     showBotReply(botReply);
                     // backend already persists bot message, but keep local copy call for UI
-                    try { saveMessageToDB('bot', botReply); } catch (e) { /* ignore */ }
                 } else {
                     const errText = await res.text();
                     showBotReply(`Error: ${errText}`);
@@ -401,12 +408,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    if (sendBtn && chatInput) {
     sendBtn.addEventListener('click', handleSend);
     chatInput.addEventListener('keypress', (e) => {
         if (e.key === 'Enter') {
             handleSend();
         }
     });
+}
 
     // SPA Page Database structure for seamless loading
     const pages = {
