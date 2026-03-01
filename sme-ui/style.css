@@ -595,15 +595,21 @@ body {
     border: 1px solid var(--surface-border);
     border-left: 4px solid var(--accent-color);
     color: var(--text-primary);
+
+    max-width: 700px;
+    margin-right: auto;      /* pushes it left */
+    margin-left: 40px;       /* slight right shift */
 }
 
 .message.user {
     background: var(--button-bg);
     border: 1px solid var(--surface-border);
     color: var(--text-primary);
-    margin-left: auto;
-    border-bottom-right-radius: 4px;
+
     max-width: 600px;
+    margin-left: auto;       /* pushes it right */
+    margin-right: 40px;      /* slight left shift */
+    border-bottom-right-radius: 4px;
 }
 
 /* Thinking Animation */
