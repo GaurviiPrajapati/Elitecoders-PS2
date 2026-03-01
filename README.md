@@ -30,25 +30,35 @@ A polished web UI and Telegram bot that route user questions to domain-specific 
 
 ## 🗂️ Repository Structure
 
-```text
-Expertease/
-├── agent.py
-├── bot.py              # Telegram bot entrypoint
-├── sme_engine.py       # Builds system prompts
-├── tools.py
-├── domains/
-│   ├── general.json
-│   ├── cybersecurity.json
-│   ├── financial_advisor.json
-│   └── legal_analyst.json
-├── logs/
-│   └── bot.log
-├── security/
-│   └── governance_rules.json
-└── ui/                 # Frontend HTML/CSS/JS (if present)
-```
-
----
+Elitecoders-PS2/
+│
+├── .run/                      # Runtime configs / IDE run configurations
+│
+├── AI_Backend/                # Core AI logic (LangChain, AutoGPT, domain logic)
+│
+├── backend_server/            # Backend server implementation
+│
+├── conversations/             # Stored conversation logs / memory
+│
+├── sme_env/                   # SME environment configurations
+│
+├── sme-ui/                    # Frontend (HTML, CSS, JS)
+│   ├── auth.js                # Authentication logic
+│   ├── chat.html              # Chat interface
+│   ├── index.html             # Landing page
+│   ├── login.html             # Login page
+│   ├── logo.png               # Project logo
+│   ├── script.js              # Frontend interaction logic
+│   └── style.css              # Styling
+│
+├── .gitignore                 # Git ignored files
+├── bot.log                    # Runtime logs
+├── LICENSE                    # Project license
+├── README.md                  # Project documentation
+├── run_all.ps1                # PowerShell script to run full system
+├── run_server.ps1             # PowerShell script to run backend
+├── server.pid                 # Server process ID
+└── test_bot.py                # Bot testing script
 
 ## 🛠️ Setup & Run
 
